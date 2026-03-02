@@ -128,31 +128,12 @@ export const FeatureGridV2 = () => {
 
                         <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
                             <div>
-                                <h3 className="text-3xl md:text-5xl font-medium tracking-tight text-gray-900 mb-8 leading-[1.1]">
+                                <h3 className="text-2xl font-bold text-gray-900 mb-4">
                                     One Trusted View of Public & Private Wealth
                                 </h3>
-                                <p className="text-lg text-gray-500 mb-12 leading-relaxed font-medium max-w-lg">
+                                <p className="text-gray-500 leading-relaxed font-medium max-w-lg">
                                     For the first time, see every asset — public equities, fixed income, private equity, real estate, digital assets — in a single, real-time view. Vintage provides full portfolio transparency across all asset classes.
                                 </p>
-
-                                <div className="flex flex-wrap items-center gap-8">
-                                    <button className="px-8 py-4 bg-[#111827] text-white rounded-xl font-bold hover:bg-gray-800 transition-all shadow-xl shadow-gray-900/20">
-                                        View use cases
-                                    </button>
-
-                                    <div className="flex items-center gap-3">
-                                        <div className="flex -space-x-2">
-                                            {[1, 2, 3].map((i) => (
-                                                <div key={i} className="w-8 h-8 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
-                                                    <img src={`https://i.pravatar.cc/100?u=${i}`} alt="user" />
-                                                </div>
-                                            ))}
-                                        </div>
-                                        <div className="text-sm font-bold text-gray-400">
-                                            <span className="text-gray-900">Trusted by</span> 300+ clients
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
 
                             <div className="relative">

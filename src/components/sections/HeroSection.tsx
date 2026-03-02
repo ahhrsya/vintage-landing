@@ -1,6 +1,7 @@
 import { Badge } from '../ui/Badge';
 import { Button } from '../ui/Button';
 import { SectionReveal } from '../ui/SectionReveal';
+import dashboardImg from '../../assets/Dashboard.png';
 
 export const HeroSection = () => {
     return (
@@ -50,7 +51,7 @@ export const HeroSection = () => {
                         {/* Dashboard Image */}
                         <div className="bg-dark-primary">
                             <img
-                                src="/src/assets/Dashboard.png"
+                                src={dashboardImg}
                                 alt="Finage Dashboard"
                                 className="w-full h-auto block"
                             />

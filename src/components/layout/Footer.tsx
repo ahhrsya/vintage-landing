@@ -3,12 +3,9 @@ export const Footer = () => {
         <footer className="py-20 bg-dark-primary text-gray-400 border-t border-white/5">
             <div className="max-w-[1200px] mx-auto px-6">
                 <div className="grid grid-cols-2 md:grid-cols-12 gap-12 mb-20">
-                    <div className="col-span-2 md:col-span-5">
-                        <div className="flex items-center gap-2 mb-6">
-                            <div className="w-8 h-8 bg-accent-primary rounded flex items-center justify-center font-bold text-white text-lg">
-                                F
-                            </div>
-                            <span className="text-xl font-bold text-white tracking-tight">Finage</span>
+                    <div className="col-span-2 md:col-span-12 lg:col-span-5">
+                        <div className="flex items-center gap-3 mb-6">
+                            <span className="text-xl font-bold text-white tracking-tight">Vintage OS</span>
                         </div>
                         <p className="max-w-sm mb-6 leading-relaxed">
                             The agentic operating system built for the complexity of private wealth management.
@@ -44,7 +41,7 @@ export const Footer = () => {
                 </div>
 
                 <div className="flex flex-col md:flex-row items-center justify-between border-t border-white/5 pt-10 text-xs font-medium">
-                    <p>© 2026 Finage. All rights reserved.</p>
+                    <p>© 2026 Vintage. All rights reserved.</p>
                     <p className="mt-4 md:mt-0 text-gray-500 italic">Built for families that think in generations.</p>
                 </div>
             </div>

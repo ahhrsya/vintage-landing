@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 const testimonials = [
     {
         category: "Long-Term Partnerships",
-        quote: "We experimented with other tools, but at the end of the day, Finage was a clear winner on the efficiency rate. If they continue doing what they're doing, they'll have a place with us forever.",
+        quote: "We experimented with other tools, but at the end of the day, Vintage was a clear winner on the efficiency rate. If they continue doing what they're doing, they'll have a place with us forever.",
         author: "Dr. Ronak Bhatt",
         title: "Founder, Chancellor & CEO, Tetra Institute",
         color: "bg-white",
@@ -12,7 +12,7 @@ const testimonials = [
     },
     {
         category: "Dedicated Service & Support",
-        quote: "The level of customization we get with Finage is unparalleled. It's not just a platform; it's a partner that understands the specific needs of our family office structure.",
+        quote: "The level of customization we get with Vintage is unparalleled. It's not just a platform; it's a partner that understands the specific needs of our family office structure.",
         author: "Sarah Jenkins",
         title: "Managing Director, Peak Wealth",
         color: "bg-white",
@@ -20,7 +20,7 @@ const testimonials = [
     },
     {
         category: "Global Reach",
-        quote: "Managing assets across three continents used to be a nightmare of consolidation. Now, it happens in real-time. Finage has fundamentally changed how we operate.",
+        quote: "Managing assets across three continents used to be a nightmare of consolidation. Now, it happens in real-time. Vintage has fundamentally changed how we operate.",
         author: "Michael Chen",
         title: "Director of Operations, Heritage Global",
         color: "bg-white",

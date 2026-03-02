@@ -11,21 +11,21 @@ export const AboutUsSection = () => {
         offset: ["start end", "end start"]
     });
 
-    const text = "ConductLite™ thrives on creativity, integrity, and a relentless pursuit of excellence. Our approach is grounded in strategic thinking and fueled by cutting-edge technology. We don't believe in one-size-fits-all solutions; instead, we dive deep into understanding your unique challenges and craft bespoke strategies that drive real results.";
+    const text = "Vintage thrives on precision, privacy, and a relentless pursuit of operational excellence. Our approach is grounded in agentic thinking and fueled by cutting-edge AI technology. We don't believe in manual overhead; instead, we dive deep into automating your unique workflows and craft the bespoke operating system that your family office deserves.";
     const words = text.split(" ");
 
     const stats = [
         {
-            num: "50",
-            desc: "Successful campaigns executed globally last year, delivering impactful results across various industries and markets."
+            num: "99",
+            desc: "Percent task automation for manual accounting and reconciliation, allowing teams to focus on strategy over spreadsheets."
         },
         {
-            num: "98",
-            desc: "Percent client satisfaction rate, reflecting our commitment to excellence and the level of transparency and honesty in our work."
+            num: "50+",
+            desc: "Billions in AUM tracked securely within our platform, providing one source of truth for global family offices."
         },
         {
-            num: "20",
-            desc: "Years of shared experience navigating complex and intricate challenges to drive meaningful growth for our various clients."
+            num: "2.4",
+            desc: "Hours to close books and generate quarterly reports with Vintage AI agents, down from weeks of manual intensive labor."
         },
     ];
 

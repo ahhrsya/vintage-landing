@@ -9,7 +9,7 @@ export const CTASection = () => {
             <div className="w-full h-full">
                 <img
                     src={ctaImg}
-                    alt="Finage CTA"
+                    alt="Vintage CTA"
                     className="w-full h-auto block min-h-[500px] object-cover md:object-fill"
                 />
             </div>

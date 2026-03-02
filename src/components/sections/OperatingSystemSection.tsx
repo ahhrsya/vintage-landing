@@ -21,12 +21,12 @@ const tabs: TabData[] = [
     {
         id: 'unstructured',
         title: 'Unstructured to Structured',
-        description: 'Finage reads PDFs, scans, and emails — and turns them into structured, reconciled data. AI-powered document intelligence, purpose-built for the family office.'
+        description: 'Vintage reads PDFs, scans, and emails — and turns them into structured, reconciled data. AI-powered document intelligence, purpose-built for the family office.'
     },
     {
         id: 'close',
         title: 'Month-End Close',
-        description: 'Automate every step of the close — from reconciliation to reporting. Finage eliminates the bottlenecks that keep your team stuck in spreadsheets every month.'
+        description: 'Automate every step of the close — from reconciliation to reporting. Vintage eliminates the bottlenecks that keep your team stuck in spreadsheets every month.'
     },
 ];
 

@@ -36,7 +36,7 @@ export const SecuritySection = () => {
                             Built for the Security and Compliance Needs of Family Offices
                         </h2>
                         <p className="text-lg text-gray-400 mb-12 leading-relaxed">
-                            We understand the sensitivity of family office data. Finage is designed
+                            We understand the sensitivity of family office data. Vintage is designed
                             from the ground up with bank-grade security and full regulatory compliance.
                         </p>
 

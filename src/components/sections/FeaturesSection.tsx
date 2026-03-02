@@ -21,7 +21,7 @@ export const FeaturesSection = () => {
                             <h3 className="card-h3 mb-6">Family offices were never designed for unstructured data</h3>
                             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                                 Custodians, fund admins, and GP portals all deliver data differently — different
-                                formats, different schedules, different levels of detail. Finage ingests,
+                                formats, different schedules, different levels of detail. Vintage ingests,
                                 normalizes, and reconciles it all automatically.
                             </p>
                             <ul className="space-y-4">
@@ -108,7 +108,7 @@ export const FeaturesSection = () => {
                             <h3 className="card-h3 mb-6">Stop Chasing GPs for Statements</h3>
                             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                                 Capital calls. Distributions. NAV statements. They arrive in every format
-                                imaginable — PDFs, emails, portal downloads. Finage extracts,
+                                imaginable — PDFs, emails, portal downloads. Vintage extracts,
                                 classifies, and books them automatically.
                             </p>
                             <ul className="space-y-4">

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Button } from '../ui/Button';
 
+import logo from '../../assets/logo-hero.png';
+
 export const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
 
@@ -23,13 +25,9 @@ export const Navbar = () => {
                 {/* Logo Area */}
                 <div className="flex items-center gap-2 pl-4 cursor-pointer">
                     <div className="flex items-center font-bold text-xl text-black tracking-tight">
-                        <svg className="w-6 h-6 mr-1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                        Finage
-                        <span className="ml-2 pl-2 border-l border-gray-200 text-gray-400 font-medium">Work</span>
+                        <img src={logo} alt="Vintage" className="w-8 h-8 mr-2 object-contain" />
+                        Vintage
+                        <span className="ml-2 pl-2 border-l border-gray-200 text-gray-400 font-medium">OS</span>
                     </div>
                 </div>
 

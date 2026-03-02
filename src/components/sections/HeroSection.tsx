@@ -89,7 +89,7 @@ export const HeroSection = () => {
                         {/* Dashboard Image */}
                         <img
                             src={dashboardImg}
-                            alt="Finage Dashboard"
+                            alt="Vintage Dashboard"
                             className="w-full h-auto block relative z-10"
                         />
                     </div>

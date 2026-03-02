@@ -45,8 +45,8 @@ export const HeroSection = () => {
 
                 {/* Dashboard Mockup without Frame */}
                 <SectionReveal delay={0.5} className="relative max-w-5xl mx-auto pointer-events-auto mt-24 px-4">
-                    {/* Background Unicorn Studio Effect - Positioned between text/buttons and dashboard */}
-                    <div className="absolute -top-[520px] left-1/2 -translate-x-1/2 w-[140%] h-[800px] z-[-1] pointer-events-none overflow-hidden">
+                    {/* DEBUG MODE: Background Unicorn Studio Effect - Brought to FRONT (z-50) */}
+                    <div className="absolute -top-[520px] left-1/2 -translate-x-1/2 w-[140%] h-[800px] z-50 pointer-events-none overflow-hidden border-2 border-red-500/20">
                         <div className="w-full h-full relative">
                             <UnicornScene projectId="6ocpWTjaHpQEGn7yK5Gz" className="w-full h-full" />
                         </div>

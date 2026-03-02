@@ -15,7 +15,15 @@ export const HeroSection = () => {
                 </SectionReveal>
 
                 <SectionReveal delay={0.2}>
-                    <h1 className="hero-h1 text-white mb-6 pointer-events-auto">
+                    <h1
+                        style={{
+                            fontFamily: "'Manrope', sans-serif",
+                            fontWeight: 500,
+                            letterSpacing: '-3px',
+                            fontSize: '72px'
+                        }}
+                        className="text-white mb-8 pointer-events-auto leading-[1.05] max-w-4xl mx-auto drop-shadow-2xl"
+                    >
                         The Agentic Operating System for{' '}
                         <span className="bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent">
                             Family Offices
@@ -24,33 +32,35 @@ export const HeroSection = () => {
                 </SectionReveal>
 
                 <SectionReveal delay={0.3}>
-                    <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-400 mb-10 leading-relaxed pointer-events-auto">
+                    <p className="max-w-2xl mx-auto text-lg md:text-xl text-gray-400 mb-12 leading-relaxed pointer-events-auto">
                         Consolidate every asset, automate every workflow, and close your books in hours — not weeks.
                         Purpose-built for the complexity of private wealth.
                     </p>
                 </SectionReveal>
 
-                <SectionReveal delay={0.4} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20 pointer-events-auto">
-                    <Button variant="primary" size="lg">Request a Demo</Button>
-                    <Button variant="outline" size="lg">Watch Overview →</Button>
+                <SectionReveal delay={0.4} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-24 pointer-events-auto">
+                    <Button variant="primary" size="lg" className="h-14 px-10 text-base">Request a Demo</Button>
+                    <Button variant="outline" size="lg" className="h-14 px-10 text-base">Watch Overview →</Button>
                 </SectionReveal>
 
                 {/* Dashboard Mockup without Frame */}
                 <SectionReveal delay={0.5} className="relative max-w-5xl mx-auto pointer-events-auto">
-                    {/* Background Unicorn Studio Effect - Positioned behind the top of the mockup */}
-                    <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-full h-[600px] z-0 pointer-events-none opacity-80">
-                        <UnicornScene projectId="6ocpWTjaHpQEGn7yK5Gz" />
+                    {/* Background Unicorn Studio Effect - Finely tuned to look like the reference image */}
+                    <div className="absolute -top-[350px] left-1/2 -translate-x-1/2 w-[140%] h-[800px] z-0 pointer-events-none overflow-visible">
+                        <div className="w-full h-full relative">
+                            <UnicornScene projectId="6ocpWTjaHpQEGn7yK5Gz" className="w-full h-full" />
+                            {/* Gradient mask to focus the effect precisely at the top edge */}
+                            <div className="absolute inset-0 bg-gradient-to-b from-dark-primary via-transparent to-dark-primary opacity-40" />
+                        </div>
                     </div>
 
-                    <div className="relative z-10 rounded-2xl shadow-2xl overflow-hidden border border-white/5">
+                    <div className="relative z-10 rounded-2xl shadow-[0_0_100px_rgba(37,99,235,0.2)] overflow-hidden border border-white/5 bg-dark-primary">
                         {/* Dashboard Image */}
-                        <div className="bg-dark-primary">
-                            <img
-                                src={dashboardImg}
-                                alt="Finage Dashboard"
-                                className="w-full h-auto block"
-                            />
-                        </div>
+                        <img
+                            src={dashboardImg}
+                            alt="Finage Dashboard"
+                            className="w-full h-auto block relative z-10"
+                        />
                     </div>
                 </SectionReveal>
             </div>

@@ -99,16 +99,9 @@ export const TestimonialV2 = () => {
                                             </div>
                                         </div>
 
-                                        <p className="text-2xl md:text-3xl lg:text-[40px] font-bold leading-[1.3] text-gray-500 tracking-tight">
+                                        <p className="text-xl md:text-2xl lg:text-3xl font-bold leading-[1.3] text-gray-500 tracking-tight">
                                             "{testimonials[index].quote}"
                                         </p>
-                                    </div>
-
-                                    {/* Bottom Logo/Graphic */}
-                                    <div className="mt-12 opacity-5">
-                                        <svg width="100" height="40" viewBox="0 0 100 40" className="fill-current">
-                                            <rect width="100" height="40" rx="4" />
-                                        </svg>
                                     </div>
                                 </div>
                             </div>

@@ -8,7 +8,7 @@ export const AboutUsSection = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
-        offset: ["start start", "end end"]
+        offset: ["start end", "end start"]
     });
 
     const stats = [
@@ -22,83 +22,81 @@ export const AboutUsSection = () => {
     const words = text.split(" ");
 
     return (
-        <section ref={containerRef} className="relative h-[300vh] bg-white text-dark-primary">
-            {/* Sticky Container */}
-            <div className="sticky top-0 h-screen flex flex-col justify-center items-center overflow-hidden">
-                <div className="max-w-[1200px] mx-auto px-6 text-center w-full">
-                    {/* Badge */}
+        <section ref={containerRef} className="py-32 bg-white text-dark-primary relative overflow-hidden">
+            <div className="max-w-[1200px] mx-auto px-6 text-center w-full">
+                {/* Badge */}
+                <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="flex justify-center mb-8"
+                >
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gray-100 border border-gray-200 text-[10px] font-bold tracking-[0.15em] uppercase text-gray-500">
+                        <Star size={12} className="text-blue-500 fill-blue-500" />
+                        About Us
+                    </div>
+                </motion.div>
+
+                {/* Dynamic Highlight Text */}
+                <div className="max-w-4xl mx-auto mb-20">
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-medium leading-[1.1] tracking-[-0.04em] text-gray-300">
+                        {words.map((word, i) => {
+                            const start = (i / words.length);
+                            const end = ((i + 1) / words.length);
+                            return (
+                                <Word key={i} progress={scrollYProgress} range={[start * 0.4 + 0.1, end * 0.4 + 0.1]}>
+                                    {word}
+                                </Word>
+                            );
+                        })}
+                    </h2>
+                </div>
+
+                {/* Dashboard Image with Browser Frame */}
+                <div className="relative max-w-4xl mx-auto mb-20">
                     <motion.div
-                        initial={{ opacity: 0, y: 10 }}
+                        initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        className="flex justify-center mb-8"
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                        className="bg-dark-secondary rounded-2xl border border-white/10 shadow-2xl overflow-hidden p-1"
                     >
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gray-100 border border-gray-200 text-[10px] font-bold tracking-[0.15em] uppercase text-gray-500">
-                            <Star size={12} className="text-blue-500 fill-blue-500" />
-                            About Us
+                        {/* Browser Header */}
+                        <div className="flex items-center gap-1.5 px-4 py-3 bg-dark-secondary border-b border-white/5">
+                            <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
+                            <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
+                            <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
+                            <div className="ml-4 flex-1 h-5 bg-black/20 rounded-md" />
+                        </div>
+
+                        {/* Dashboard Image */}
+                        <div className="bg-dark-primary">
+                            <img
+                                src={dashboardImg}
+                                alt="Finage Dashboard"
+                                className="w-full h-auto block"
+                            />
                         </div>
                     </motion.div>
+                </div>
 
-                    {/* Dynamic Highlight Text */}
-                    <div className="max-w-4xl mx-auto mb-16">
-                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-medium leading-[1.1] tracking-[-0.04em] text-gray-300">
-                            {words.map((word, i) => {
-                                // We want the text to reveal over the first 60% of the sticky scroll
-                                const start = (i / words.length) * 0.6;
-                                const end = ((i + 1) / words.length) * 0.6;
-                                return (
-                                    <Word key={i} progress={scrollYProgress} range={[start, end]}>
-                                        {word}
-                                    </Word>
-                                );
-                            })}
-                        </h2>
-                    </div>
-
-                    {/* Dashboard Image with Browser Frame */}
-                    <div className="relative max-w-4xl mx-auto mb-16">
+                {/* Metrics Row */}
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 border-t border-gray-100 pt-16 max-w-4xl mx-auto">
+                    {stats.map((stat, index) => (
                         <motion.div
-                            style={{
-                                opacity: useTransform(scrollYProgress, [0.4, 0.6], [0, 1]),
-                                y: useTransform(scrollYProgress, [0.4, 0.6], [40, 0])
-                            }}
-                            className="bg-dark-secondary rounded-2xl border border-white/10 shadow-2xl overflow-hidden p-1"
+                            key={stat.label}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1, duration: 0.6 }}
+                            className="flex flex-col text-left"
                         >
-                            {/* Browser Header */}
-                            <div className="flex items-center gap-1.5 px-4 py-3 bg-dark-secondary border-b border-white/5">
-                                <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
-                                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
-                                <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
-                                <div className="ml-4 flex-1 h-5 bg-black/20 rounded-md" />
-                            </div>
-
-                            {/* Dashboard Image */}
-                            <div className="bg-dark-primary">
-                                <img
-                                    src={dashboardImg}
-                                    alt="Finage Dashboard"
-                                    className="w-full h-auto block"
-                                />
-                            </div>
+                            <span className="font-bold text-3xl mb-1 tracking-tight">{stat.value}</span>
+                            <span className="text-[10px] font-bold uppercase tracking-widest text-gray-500">
+                                {stat.label}
+                            </span>
                         </motion.div>
-                    </div>
-
-                    {/* Metrics Row */}
-                    <motion.div
-                        style={{
-                            opacity: useTransform(scrollYProgress, [0.7, 0.85], [0, 1]),
-                            y: useTransform(scrollYProgress, [0.7, 0.85], [20, 0])
-                        }}
-                        className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 border-t border-gray-100 pt-16 max-w-4xl mx-auto"
-                    >
-                        {stats.map((stat) => (
-                            <div key={stat.label} className="flex flex-col text-left">
-                                <span className="font-bold text-3xl mb-1 tracking-tight">{stat.value}</span>
-                                <span className="text-[10px] font-bold uppercase tracking-widest text-gray-500">
-                                    {stat.label}
-                                </span>
-                            </div>
-                        ))}
-                    </motion.div>
+                    ))}
                 </div>
             </div>
         </section>

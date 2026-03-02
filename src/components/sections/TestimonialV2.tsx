@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { SectionReveal } from '../ui/SectionReveal';
 
 const testimonials = [
@@ -49,7 +49,7 @@ export const TestimonialV2 = () => {
                 </SectionReveal>
 
                 {/* Main Content */}
-                <div className="max-w-5xl mx-auto relative">
+                <div className="w-full relative">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={index}
@@ -61,8 +61,8 @@ export const TestimonialV2 = () => {
                         >
                             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
                                 {/* Left Side: Image */}
-                                <div className="lg:col-span-5 h-[400px] md:h-[500px]">
-                                    <div className="w-full h-full rounded-[32px] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 shadow-xl border border-gray-100">
+                                <div className="lg:col-span-4 h-[400px] md:h-[550px]">
+                                    <div className="w-full h-full rounded-[32px] overflow-hidden shadow-xl border border-gray-100">
                                         <img
                                             src={testimonials[index].image}
                                             alt={testimonials[index].name}
@@ -72,8 +72,8 @@ export const TestimonialV2 = () => {
                                 </div>
 
                                 {/* Right Side: Content Card */}
-                                <div className="lg:col-span-7 bg-[#F2F3F5] rounded-[32px] p-8 md:p-14 relative flex flex-col justify-between border border-gray-50 overflow-hidden">
-                                    <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-white/30 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+                                <div className="lg:col-span-8 bg-[#F2F3F5] rounded-[32px] p-8 md:p-14 relative flex flex-col justify-between border border-gray-50 overflow-hidden">
+                                    <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/30 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
                                     <div className="relative z-10">
                                         <div className="flex justify-between items-start mb-12">
@@ -99,7 +99,7 @@ export const TestimonialV2 = () => {
                                             </div>
                                         </div>
 
-                                        <p className="text-2xl md:text-3xl lg:text-[40px] font-bold leading-[1.2] text-gray-500 tracking-tight">
+                                        <p className="text-2xl md:text-3xl lg:text-[42px] font-bold leading-[1.2] text-gray-500 tracking-tight">
                                             {testimonials[index].quote.split(' ').map((word, i) => (
                                                 <span key={i} className={word === "effortless" || word === "precision" || word === "needed" ? "text-gray-950 underline decoration-blue-500/30 underline-offset-8" : ""}>{word} </span>
                                             ))}
@@ -116,45 +116,6 @@ export const TestimonialV2 = () => {
                             </div>
                         </motion.div>
                     </AnimatePresence>
-
-                    {/* Footer Row */}
-                    <div className="mt-8 flex flex-wrap items-center justify-between gap-6">
-                        <div className="flex flex-wrap gap-4">
-                            <div className="px-6 py-3 bg-[#f8f9fa] border border-gray-100 rounded-2xl flex items-center gap-2">
-                                <span className="text-lg font-bold text-gray-900">145+</span>
-                                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Global reach</span>
-                            </div>
-                            <div className="px-6 py-3 bg-[#f8f9fa] border border-gray-100 rounded-2xl flex items-center gap-2">
-                                <span className="text-lg font-bold text-gray-900">$68B</span>
-                                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">AUM Tracked</span>
-                            </div>
-                        </div>
-
-                        <div className="flex items-center gap-8 md:gap-12">
-                            <div className="flex items-center gap-2">
-                                <div className="p-1.5 rounded-lg bg-blue-50 text-blue-600">
-                                    <Star size={16} fill="currentColor" />
-                                </div>
-                                <div className="space-y-0.5">
-                                    <div className="text-[11px] font-bold text-gray-900 flex items-center gap-1">
-                                        4.8 <span className="text-gray-400">/ 5</span>
-                                    </div>
-                                    <div className="text-[9px] font-bold text-gray-400 uppercase tracking-tighter">Google Reviews</div>
-                                </div>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <div className="p-1.5 rounded-lg bg-green-50 text-green-600">
-                                    <Star size={16} fill="currentColor" />
-                                </div>
-                                <div className="space-y-0.5">
-                                    <div className="text-[11px] font-bold text-gray-900 flex items-center gap-1">
-                                        4.9 <span className="text-gray-400">/ 5</span>
-                                    </div>
-                                    <div className="text-[9px] font-bold text-gray-400 uppercase tracking-tighter">Trustpilot</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
             </div>

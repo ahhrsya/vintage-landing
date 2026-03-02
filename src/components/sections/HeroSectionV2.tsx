@@ -64,14 +64,15 @@ export const HeroSectionV2 = () => {
                                 }}
                                 className="text-white mb-8 leading-[1.05] drop-shadow-2xl max-w-lg"
                             >
-                                Ultimate Guide to the Right Asset
+                                The Agentic OS for <br />
+                                Family Offices
                             </h1>
                         </SectionReveal>
 
                         <SectionReveal delay={0.3}>
                             <p className="text-lg md:text-xl text-gray-400 mb-12 leading-relaxed max-w-xl">
-                                Transform the way you manage private wealth with our AI-powered operating system.
-                                Consolidate, automate, and scale your family office operations.
+                                Consolidate every asset, automate every workflow, and close your books in hours — not weeks.
+                                Purpose-built for private wealth.
                             </p>
                         </SectionReveal>
 

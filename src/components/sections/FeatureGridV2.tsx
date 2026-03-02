@@ -112,7 +112,7 @@ export const FeatureGridV2 = () => {
                             <div>
                                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Automate High-Frequency Workflows</h3>
                                 <p className="text-gray-500 leading-relaxed font-medium">
-                                    AI Supply agents break down complex tasks into clear, traceable steps. Eliminate repetitive work and scale your team's output with unmatched efficiency and precision.
+                                    Vintage AI agents break down complex tasks into clear, traceable steps. Eliminate repetitive accounting work and scale your team's output with unmatched precision.
                                 </p>
                             </div>
                         </div>
@@ -132,7 +132,7 @@ export const FeatureGridV2 = () => {
                                     Accelerate Execution with Reliable Autonomy
                                 </h3>
                                 <p className="text-lg text-gray-500 mb-12 leading-relaxed font-medium max-w-lg">
-                                    Our agents don't just assist — they complete tasks end-to-end with accountability and speed. Track progress, refine outputs, and get results faster.
+                                    Our agents don't just assist — they complete reconciliations and reporting end-to-end with full accountability. Track progress and get results faster.
                                 </p>
 
                                 <div className="flex flex-wrap items-center gap-8">

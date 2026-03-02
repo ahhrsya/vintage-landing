@@ -3,6 +3,7 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { SectionReveal } from '../ui/SectionReveal';
 import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 import dashboardUpdate from '../../assets/dashboard_upadtee.png';
+import { Button } from '../ui/Button';
 
 export const CTAV2 = () => {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -36,19 +37,19 @@ export const CTAV2 = () => {
             ref={containerRef}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            className="relative bg-[#F8F9FB] pt-32 pb-20 overflow-hidden text-gray-900"
+            className="relative bg-black pt-32 pb-20 overflow-hidden text-white cursor-default"
         >
-            {/* Subtle Gradient Following Cursor (Light Theme Version) */}
+            {/* Subtle Gradient Following Cursor (Dark Theme Version) */}
             <motion.div
-                className="absolute pointer-events-none opacity-50 transition-opacity duration-500"
+                className="absolute pointer-events-none opacity-20 transition-opacity duration-500"
                 style={{
                     left: mouseX,
                     top: mouseY,
                     x: '-50%',
                     y: '-50%',
-                    width: '600px',
-                    height: '600px',
-                    background: 'radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%)',
+                    width: '800px',
+                    height: '800px',
+                    background: 'radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%)',
                 }}
             />
 
@@ -57,27 +58,35 @@ export const CTAV2 = () => {
 
                     {/* Left Side: Content */}
                     <div className="text-left">
-                        <SectionReveal>
-                            <h2
-                                className="text-5xl md:text-6xl lg:text-[72px] font-medium tracking-tight mb-8 leading-[1.1] text-[#1D2939]"
-                                style={{ fontFamily: "'Manrope', serif" }}
-                            >
-                                Revolutionize wealth <br />
-                                with AI agents that <br />
-                                never sleep ever.
-                            </h2>
-                        </SectionReveal>
-
                         <SectionReveal delay={0.1}>
-                            <p className="text-gray-500 text-lg md:text-xl font-medium mb-12 max-w-md leading-relaxed">
-                                Instant responses, 100% uptime, and smarter operations all without expanding your team.
-                            </p>
+                            <div className="inline-flex items-center px-4 py-2 rounded-xl bg-white/10 border border-white/5 backdrop-blur-md mb-8">
+                                <span className="text-white/80 text-xs font-medium uppercase tracking-widest">Introducing Agentic Workflows for Wealth</span>
+                            </div>
                         </SectionReveal>
 
                         <SectionReveal delay={0.2}>
-                            <button className="h-16 px-10 bg-[#007AFF] text-white rounded-full font-bold hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/25">
-                                Join the Beta Program
-                            </button>
+                            <h2
+                                className="text-5xl md:text-6xl lg:text-[72px] font-medium tracking-tight mb-8 leading-[1.1] text-white"
+                                style={{ fontFamily: "'Manrope', serif" }}
+                            >
+                                Close Faster. <br />
+                                Operate Smarter.
+                            </h2>
+                        </SectionReveal>
+
+                        <SectionReveal delay={0.3}>
+                            <p className="text-white/60 text-lg md:text-xl font-medium mb-12 max-w-md leading-relaxed">
+                                Vintage turns fragmented data into an operating system — and manual work into automation.
+                            </p>
+                        </SectionReveal>
+
+                        <SectionReveal delay={0.4} className="flex flex-col sm:flex-row items-center gap-4">
+                            <Button variant="primary" size="lg" className="w-full sm:w-auto rounded-xl px-10 h-14 text-sm md:text-base font-bold bg-[#007AFF] border-[#007AFF] text-white hover:bg-[#007AFF]/90 shadow-xl shadow-blue-500/20">
+                                Join Waitlist
+                            </Button>
+                            <Button variant="outline" size="lg" className="w-full sm:w-auto rounded-xl px-10 h-14 text-sm md:text-base font-bold bg-white border-white !text-black hover:bg-white/90 shadow-xl">
+                                View Demo Dashboard
+                            </Button>
                         </SectionReveal>
                     </div>
 
@@ -85,63 +94,63 @@ export const CTAV2 = () => {
                     <SectionReveal delay={0.3} className="relative">
                         <motion.div
                             style={{ rotateX, rotateY, perspective: "1000px" }}
-                            className="bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-100 p-2 overflow-hidden"
+                            className="bg-[#111] rounded-2xl shadow-2xl border border-white/5 p-2 overflow-hidden"
                         >
                             {/* Browser Bar */}
-                            <div className="flex items-center gap-1.5 px-4 py-3 bg-[#F9FAFB] border-b border-gray-100">
-                                <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
-                                <div className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E]" />
-                                <div className="w-2.5 h-2.5 rounded-full bg-[#28C840]" />
+                            <div className="flex items-center gap-1.5 px-4 py-3 bg-[#1A1A1A] border-b border-white/5">
+                                <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F57] opacity-60" />
+                                <div className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E] opacity-60" />
+                                <div className="w-2.5 h-2.5 rounded-full bg-[#28C840] opacity-60" />
                             </div>
                             {/* Actual Image */}
                             <img
                                 src={dashboardUpdate}
                                 alt="Vintage Dashboard"
-                                className="w-full h-auto block rounded-b-xl"
+                                className="w-full h-auto block rounded-b-xl opacity-90"
                             />
                         </motion.div>
                     </SectionReveal>
                 </div>
 
-                {/* Footer Section Style Sync */}
-                <div className="border-t border-gray-200 pt-16">
+                {/* Footer Section Integrated (Dark Theme) */}
+                <div className="border-t border-white/5 pt-16">
                     <div className="flex flex-col gap-8">
 
                         {/* Links Row */}
                         <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 pb-16">
                             <div className="flex items-center gap-12 text-sm font-medium">
-                                <span className="text-gray-400 uppercase tracking-widest text-[10px] font-bold">Pages</span>
+                                <span className="text-gray-500 uppercase tracking-widest text-[10px] font-bold">Pages</span>
                                 <div className="flex flex-wrap gap-x-8 gap-y-2">
                                     {['Home', 'Use cases', 'About', 'Careers', 'Contact'].map(link => (
-                                        <a key={link} href="#" className="text-gray-500 hover:text-black transition-colors">{link}</a>
+                                        <a key={link} href="#" className="text-gray-400 hover:text-white transition-colors">{link}</a>
                                     ))}
                                 </div>
                             </div>
                             <div className="flex items-center gap-12 text-sm font-medium">
-                                <span className="text-gray-400 uppercase tracking-widest text-[10px] font-bold">Legal</span>
+                                <span className="text-gray-500 uppercase tracking-widest text-[10px] font-bold">Legal</span>
                                 <div className="flex gap-8">
                                     {['Privacy policy', 'Terms & conditions'].map(link => (
-                                        <a key={link} href="#" className="text-gray-500 hover:text-black transition-colors">{link}</a>
+                                        <a key={link} href="#" className="text-gray-400 hover:text-white transition-colors">{link}</a>
                                     ))}
                                 </div>
                             </div>
                         </div>
 
                         {/* Branding Row */}
-                        <div className="flex flex-col md:flex-row items-center justify-between pt-12 border-t border-gray-100 gap-8">
+                        <div className="flex flex-col md:flex-row items-center justify-between pt-12 border-t border-white/5 gap-8">
                             <div className="flex items-center gap-4">
-                                <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                                    <div className="w-4 h-4 bg-white rounded-sm rotate-45" />
+                                <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                                    <div className="w-4 h-4 bg-black rounded-sm rotate-45" />
                                 </div>
-                                <span className="text-xl font-bold tracking-tight text-[#1D2939]">Vintage</span>
-                                <span className="text-xs text-gray-400 ml-4 font-medium">© 2025. All Rights Reserved</span>
+                                <span className="text-xl font-bold tracking-tight text-white">Vintage</span>
+                                <span className="text-xs text-gray-500 ml-4 font-medium">© 2026. All Rights Reserved</span>
                             </div>
 
                             <div className="flex items-center gap-6">
-                                <Twitter size={18} className="text-gray-400 hover:text-black cursor-pointer" />
-                                <Linkedin size={18} className="text-gray-400 hover:text-black cursor-pointer" />
-                                <Instagram size={18} className="text-gray-400 hover:text-black cursor-pointer" />
-                                <Facebook size={18} className="text-gray-400 hover:text-black cursor-pointer" />
+                                <Twitter size={18} className="text-gray-400 hover:text-white cursor-pointer" />
+                                <Linkedin size={18} className="text-gray-400 hover:text-white cursor-pointer" />
+                                <Instagram size={18} className="text-gray-400 hover:text-white cursor-pointer" />
+                                <Facebook size={18} className="text-gray-400 hover:text-white cursor-pointer" />
                             </div>
                         </div>
 

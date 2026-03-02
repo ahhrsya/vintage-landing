@@ -6,6 +6,7 @@ import { TestimonialStickySection } from '../components/sections/TestimonialStic
 import { AutomationSection } from '../components/sections/AutomationSection';
 import { SecuritySection } from '../components/sections/SecuritySection';
 import { CTASection } from '../components/sections/CTASection';
+import { Footer } from '../components/layout/Footer';
 
 export const HomeV1 = () => {
     return (
@@ -18,6 +19,7 @@ export const HomeV1 = () => {
             <AutomationSection />
             <SecuritySection />
             <CTASection />
+            <Footer />
         </>
     );
 };

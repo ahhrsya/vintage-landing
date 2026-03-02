@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/layout/Navbar';
-import { Footer } from './components/layout/Footer';
 import { HomeV1 } from './pages/HomeV1';
 import { HomeV2 } from './pages/HomeV2';
 
@@ -15,7 +14,6 @@ function App() {
             <Route path="/v2" element={<HomeV2 />} />
           </Routes>
         </main>
-        <Footer />
       </div>
     </Router>
   );

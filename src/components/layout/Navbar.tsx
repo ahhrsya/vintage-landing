@@ -23,12 +23,8 @@ export const Navbar = () => {
                     }`}
             >
                 {/* Logo Area */}
-                <div className="flex items-center gap-2 pl-4 cursor-pointer">
-                    <div className="flex items-center font-bold text-xl text-black tracking-tight">
-                        <img src={logo} alt="Vintage" className="w-8 h-8 mr-2 object-contain" />
-                        Vintage
-                        <span className="ml-2 pl-2 border-l border-gray-200 text-gray-400 font-medium">OS</span>
-                    </div>
+                <div className="flex items-center pl-4 cursor-pointer">
+                    <img src={logo} alt="Vintage" className="h-10 w-auto object-contain" />
                 </div>
 
                 {/* Menu Items */}

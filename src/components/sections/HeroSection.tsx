@@ -1,10 +1,36 @@
+import { useEffect, useRef } from 'react';
 import { Badge } from '../ui/Badge';
 import { Button } from '../ui/Button';
 import { SectionReveal } from '../ui/SectionReveal';
 import dashboardImg from '../../assets/Dashboard.png';
-import { UnicornScene } from 'unicornstudio-react';
+
+declare global {
+    interface Window {
+        UnicornStudio: any;
+    }
+}
 
 export const HeroSection = () => {
+    const effectRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        // Load Unicorn Studio script manually
+        const scriptId = 'unicorn-studio-script';
+        if (!document.getElementById(scriptId)) {
+            const script = document.createElement('script');
+            script.id = scriptId;
+            script.src = 'https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.0.5/dist/unicornStudio.umd.js';
+            script.onload = () => {
+                if (window.UnicornStudio && window.UnicornStudio.init) {
+                    window.UnicornStudio.init();
+                }
+            };
+            document.head.appendChild(script);
+        } else if (window.UnicornStudio && window.UnicornStudio.init) {
+            window.UnicornStudio.init();
+        }
+    }, []);
+
     return (
         <section className="relative pt-32 pb-20 bg-dark-primary overflow-hidden">
             <div className="relative z-10 max-w-[1200px] mx-auto px-6 text-center pointer-events-none">
@@ -44,12 +70,19 @@ export const HeroSection = () => {
                 </SectionReveal>
 
                 {/* Dashboard Mockup without Frame */}
-                <SectionReveal delay={0.5} className="relative max-w-5xl mx-auto pointer-events-auto mt-24 px-4">
-                    {/* Size Reverted: Background Unicorn Studio Effect - Brought to FRONT (z-50) */}
-                    <div className="absolute top-0 left-0 w-full h-full z-50 pointer-events-none">
-                        <div className="w-full h-full relative">
-                            <UnicornScene projectId="6ocpWTjaHpQEGn7yK5Gz" className="w-full h-full" />
-                        </div>
+                <SectionReveal delay={0.5} className="relative max-w-5xl mx-auto pointer-events-auto mt-20 px-4">
+                    {/* Background Unicorn Studio Effect - Manual Embed */}
+                    <div className="absolute -top-[450px] left-1/2 -translate-x-1/2 z-[-1] pointer-events-none">
+                        <div
+                            ref={effectRef}
+                            data-us-project="6ocpWTjaHpQEGn7yK5Gz"
+                            style={{
+                                width: '1440px',
+                                height: '900px',
+                                opacity: 1
+                            }}
+                            className="scale-75 md:scale-100 origin-center"
+                        />
                     </div>
 
                     <div className="relative z-10 rounded-2xl shadow-2xl overflow-hidden border border-white/5 bg-dark-primary">

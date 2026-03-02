@@ -1,5 +1,4 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const testimonials = [
     {
@@ -26,76 +25,58 @@ const testimonials = [
 ];
 
 export const TestimonialStickySection = () => {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start start", "end end"]
-    });
-
     return (
-        <section ref={containerRef} className="relative h-[400vh] bg-[#F8F9FA] text-dark-primary">
-            <div className="sticky top-0 h-screen flex flex-col items-center pt-24 overflow-hidden">
-                <div className="max-w-[1200px] mx-auto px-6 text-center w-full mb-12">
-                    <div className="inline-flex items-center px-4 py-1 rounded-full bg-white border border-gray-200 text-[10px] font-bold tracking-widest uppercase text-gray-500 mb-6">
-                        Testimonials
-                    </div>
-                    <h2 className="text-4xl md:text-6xl font-medium tracking-tight mb-4">
-                        A platform family offices<br />can finally <span className="italic">rely on.</span>
-                    </h2>
-                    <p className="text-gray-500 max-w-2xl mx-auto">
-                        Join 100+ forward-thinking family offices maximizing their financial power. It's time your wealth worked as hard as you do.
-                    </p>
+        <section className="bg-[#F8F9FA] pb-64">
+            {/* Header stays at the top */}
+            <div className="max-w-[1200px] mx-auto px-6 text-center pt-32 pb-20">
+                <div className="inline-flex items-center px-4 py-1 rounded-full bg-white border border-gray-200 text-[10px] font-bold tracking-widest uppercase text-gray-500 mb-6">
+                    Testimonials
                 </div>
+                <h2 className="text-4xl md:text-6xl font-medium tracking-tight mb-4 text-dark-primary">
+                    A platform family offices<br />can finally <span className="italic">rely on.</span>
+                </h2>
+                <p className="text-gray-500 max-w-2xl mx-auto">
+                    Join 100+ forward-thinking family offices maximizing their financial power. It's time your wealth worked as hard as you do.
+                </p>
+            </div>
 
-                <div className="relative w-full max-w-4xl mx-auto px-6 h-[400px]">
-                    {testimonials.map((t, i) => {
-                        const targetProgress = i / testimonials.length;
-                        const nextProgress = (i + 1) / testimonials.length;
-
-                        // Scroll logic for each card
-                        // Card starts below and slides up
-                        const y = useTransform(
-                            scrollYProgress,
-                            [targetProgress - 0.1, targetProgress, nextProgress],
-                            [100, 0, 0]
-                        );
-
-                        // Optional: subtle scaling or opacity change for background cards
-                        const scale = useTransform(
-                            scrollYProgress,
-                            [targetProgress, nextProgress],
-                            [1, 0.95]
-                        );
-
-                        return (
-                            <motion.div
-                                key={i}
-                                style={{
-                                    y,
-                                    scale,
-                                    zIndex: i,
-                                    top: i * 20 // Slight offset for stacking look
-                                }}
-                                className={`absolute inset-x-0 mx-auto ${t.color} rounded-[32px] p-10 md:p-16 text-white shadow-2xl flex flex-col justify-between h-full`}
-                            >
-                                <div>
-                                    <span className="text-sm font-medium opacity-60 mb-8 block">{t.category}</span>
-                                    <p className="text-xl md:text-3xl font-medium leading-tight">
-                                        "{t.quote}"
-                                    </p>
-                                </div>
-                                <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 rounded-full bg-gray-400 flex-shrink-0" />
-                                    <div className="text-left">
-                                        <div className="font-bold text-lg">{t.author}</div>
-                                        <div className="text-sm opacity-60">{t.title}</div>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        );
-                    })}
-                </div>
+            {/* Stacking Cards Container */}
+            <div className="max-w-4xl mx-auto px-6 relative">
+                {testimonials.map((t, i) => (
+                    <TestimonialCard key={i} testimonial={t} index={i} />
+                ))}
             </div>
         </section>
+    );
+};
+
+const TestimonialCard = ({ testimonial: t, index }: { testimonial: any, index: number }) => {
+    return (
+        <div
+            className="sticky top-[150px] mb-[40vh] last:mb-0"
+            style={{ zIndex: index }}
+        >
+            <motion.div
+                initial={{ opacity: 0, y: 50, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className={`${t.color} rounded-[32px] md:rounded-[48px] p-8 md:p-16 text-white shadow-2xl flex flex-col justify-between min-h-[400px] md:min-h-[500px] border border-white/5`}
+            >
+                <div>
+                    <span className="text-sm font-medium opacity-60 mb-8 block font-mono tracking-widest uppercase">{t.category}</span>
+                    <p className="text-xl md:text-3xl lg:text-4xl font-medium leading-tight md:leading-tight">
+                        "{t.quote}"
+                    </p>
+                </div>
+                <div className="flex items-center gap-6 mt-12 md:mt-0">
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-gray-500 to-gray-700 flex-shrink-0" />
+                    <div className="text-left">
+                        <div className="font-bold text-lg md:text-xl">{t.author}</div>
+                        <div className="text-sm md:text-base opacity-60">{t.title}</div>
+                    </div>
+                </div>
+            </motion.div>
+        </div>
     );
 };

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { SectionReveal } from '../ui/SectionReveal';
 import { Shield, Lock, Globe, Key } from 'lucide-react';
 
@@ -40,7 +41,7 @@ export const SecuritySection = () => {
                         </p>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            {badges.map((badge, i) => (
+                            {badges.map((badge) => (
                                 <div key={badge.title} className="p-6 bg-dark-card border border-white/5 rounded-2xl flex flex-col gap-4">
                                     <div className="w-10 h-10 rounded-full bg-accent-primary/10 flex items-center justify-center">
                                         {badge.icon}

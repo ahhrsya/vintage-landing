@@ -11,7 +11,6 @@ interface TabContent {
     icon: React.ReactNode;
     title: string;
     description: string;
-    items: string[];
     subtext: string;
     visual: React.ReactNode;
 }
@@ -25,13 +24,7 @@ export const StackSectionV2 = () => {
             label: 'System of Record',
             icon: <FileText className="text-white w-6 h-6" />,
             title: 'System of Record',
-            description: 'A unified, auditable ledger that ingests data from banks, custodians, fund administrators, and unstructured GP documents.',
-            items: [
-                'Timestamped',
-                'Provenance-linked to source documents',
-                'Versioned and auditable',
-                'Tagged for exposure and regulation'
-            ],
+            description: 'Every position, transaction, document, and contact — consolidated in a single, auditable system. No more stitching together spreadsheets, PDFs, and portal logins. Vintage provides a unified ledger where every data point is provenance-linked to its source document and timestamped for absolute auditability.',
             subtext: 'This is the foundation everything else is built on.',
             visual: <RecordVisual />
         },
@@ -40,13 +33,7 @@ export const StackSectionV2 = () => {
             label: 'System of Engagement',
             icon: <Users className="text-white w-6 h-6" />,
             title: 'System of Engagement',
-            description: 'A collaborative workspace where teams and stakeholders interact with real-time data and automated reports.',
-            items: [
-                'Unified portal for stakeholders',
-                'Real-time document sharing',
-                'Cross-entity reporting and consolidation',
-                'Secure, watermark-ready sharing'
-            ],
+            description: 'A single, unified view across every entity, account, custodian, trust, and private-market investment. Securely share watermark-ready reports with stakeholders and collaborators in real-time. Where highly fragmented data turns into synchronized decisions and transparent communication across the entire family office ecosystem.',
             subtext: 'Where data turns into decisions and communication.',
             visual: <EngagementVisual />
         },
@@ -55,13 +42,7 @@ export const StackSectionV2 = () => {
             label: 'System of Agents',
             icon: <Cpu className="text-white w-6 h-6" />,
             title: 'System of Agents',
-            description: 'Autonomous AI agents that execute complex multi-step workflows across your entire financial operation.',
-            items: [
-                'Self-reconciling ledgers',
-                'Autonomous tax preparation (FATCA, CRS)',
-                'Automated capital call processing',
-                'Audit-ready reporting with full provenance'
-            ],
+            description: 'Autonomous AI agents that collect capital calls, distributions, and statements — flagging stale marks and applying valuation policies. Vintage agents execute complex multi-step workflows like self-reconciling ledgers and autonomous tax preparation, assembles auditor-ready reporting with institutional-grade precision.',
             subtext: 'The engine that drives true operational scale.',
             visual: <AgentsVisual />
         }
@@ -104,8 +85,8 @@ export const StackSectionV2 = () => {
                                 key={tabId}
                                 onClick={() => setActiveTab(tabId)}
                                 className={`px-4 md:px-8 py-3 rounded-xl text-sm font-bold transition-all ${activeTab === tabId
-                                    ? 'bg-[#007AFF] text-white shadow-lg shadow-blue-500/20'
-                                    : 'text-gray-400 hover:text-gray-600'
+                                        ? 'bg-[#007AFF] text-white shadow-lg shadow-blue-500/20'
+                                        : 'text-gray-400 hover:text-gray-600'
                                     }`}
                             >
                                 {contents[tabId].label}
@@ -136,18 +117,6 @@ export const StackSectionV2 = () => {
                                 <p className="text-gray-500 text-lg leading-relaxed font-medium mb-10">
                                     {contents[activeTab].description}
                                 </p>
-
-                                <div className="mb-10">
-                                    <p className="font-bold text-gray-900 mb-4">Key Capabilities:</p>
-                                    <ul className="space-y-3">
-                                        {contents[activeTab].items.map((item, idx) => (
-                                            <li key={idx} className="flex items-start gap-3 text-gray-600 font-medium">
-                                                <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0" />
-                                                <span>{item}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
 
                                 <p className="text-gray-400 font-medium italic">
                                     {contents[activeTab].subtext}
@@ -318,7 +287,6 @@ const AgentsVisual = () => {
     );
 };
 
-// Mock LayoutActive for Engagement visual
 const LayoutActive = ({ size, className }: { size: number, className: string }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
         <rect width="18" height="18" x="3" y="3" rx="2" />

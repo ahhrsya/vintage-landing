@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 import { Star } from 'lucide-react';
 
 import dashboardImg from '../../assets/Dashboard.png';
@@ -103,7 +103,7 @@ export const AboutUsSection = () => {
     );
 };
 
-const Word = ({ children, progress, range }: { children: string, progress: any, range: [number, number] }) => {
+const Word = ({ children, progress, range }: { children: string, progress: MotionValue<number>, range: [number, number] }) => {
     const color = useTransform(progress, range, ["#D1D5DB", "#09090B"]);
 
     return (

@@ -12,27 +12,28 @@ interface TabData {
     description: string;
 }
 
+const tabs: TabData[] = [
+    {
+        id: 'record',
+        title: 'System of Record',
+        description: 'Every position, transaction, document, and contact — consolidated in a single, auditable system. No more stitching together spreadsheets, PDFs, and portal logins.'
+    },
+    {
+        id: 'unstructured',
+        title: 'Unstructured to Structured',
+        description: 'Finage reads PDFs, scans, and emails — and turns them into structured, reconciled data. AI-powered document intelligence, purpose-built for the family office.'
+    },
+    {
+        id: 'close',
+        title: 'Month-End Close',
+        description: 'Automate every step of the close — from reconciliation to reporting. Finage eliminates the bottlenecks that keep your team stuck in spreadsheets every month.'
+    },
+];
+
 export const OperatingSystemSection = () => {
     const [activeTab, setActiveTab] = useState<TabId>('record');
     const [progress, setProgress] = useState(0);
 
-    const tabs: TabData[] = [
-        {
-            id: 'record',
-            title: 'System of Record',
-            description: 'Every position, transaction, document, and contact — consolidated in a single, auditable system. No more stitching together spreadsheets, PDFs, and portal logins.'
-        },
-        {
-            id: 'unstructured',
-            title: 'Unstructured to Structured',
-            description: 'Finage reads PDFs, scans, and emails — and turns them into structured, reconciled data. AI-powered document intelligence, purpose-built for the family office.'
-        },
-        {
-            id: 'close',
-            title: 'Month-End Close',
-            description: 'Automate every step of the close — from reconciliation to reporting. Finage eliminates the bottlenecks that keep your team stuck in spreadsheets every month.'
-        },
-    ];
 
     useEffect(() => {
         const interval = 50; // Update every 50ms

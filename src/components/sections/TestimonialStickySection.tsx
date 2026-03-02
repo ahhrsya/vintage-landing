@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 
 const testimonials = [
     {
@@ -53,59 +53,78 @@ export const TestimonialStickySection = () => {
 
                 {/* The Stacking Deck */}
                 <div className="relative flex-1 w-full max-w-4xl mx-auto px-6 mb-12">
-                    {testimonials.map((t, i) => {
-                        const start = (i / testimonials.length) * 0.8;
-                        const end = start + 0.2;
-
-                        const y = useTransform(
-                            scrollYProgress,
-                            [start - 0.1, start, 1],
-                            [800, 0, 0]
-                        );
-
-                        const scale = useTransform(
-                            scrollYProgress,
-                            [end, end + 0.1],
-                            [1, 0.98]
-                        );
-
-                        const opacity = useTransform(
-                            scrollYProgress,
-                            [end, end + 0.1],
-                            [1, 0.9]
-                        );
-
-                        return (
-                            <motion.div
-                                key={i}
-                                style={{
-                                    y,
-                                    scale: i < testimonials.length - 1 ? scale : 1,
-                                    opacity: i < testimonials.length - 1 ? opacity : 1,
-                                    zIndex: i
-                                }}
-                                className="absolute inset-x-6 mx-auto bg-white rounded-xl p-8 md:p-12 border border-gray-200 shadow-none flex flex-col justify-between h-[360px] md:h-[420px] max-h-[50vh]"
-                            >
-                                <div>
-                                    <span className="text-[10px] font-bold tracking-[0.2em] text-gray-400 mb-6 block uppercase">
-                                        {t.category}
-                                    </span>
-                                    <p className="text-lg md:text-xl lg:text-2xl font-medium leading-[1.4] text-dark-primary tracking-tight">
-                                        "{t.quote}"
-                                    </p>
-                                </div>
-                                <div className="flex items-center gap-4 mt-8">
-                                    <div className="w-10 h-10 rounded-full bg-gray-100 border border-gray-200" />
-                                    <div>
-                                        <div className="font-bold text-sm md:text-base text-dark-primary">{t.author}</div>
-                                        <div className="text-[10px] md:text-xs text-gray-400 font-medium">{t.title}</div>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        );
-                    })}
+                    {testimonials.map((t, i) => (
+                        <TestimonialCard
+                            key={i}
+                            testimonial={t}
+                            index={i}
+                            total={testimonials.length}
+                            scrollYProgress={scrollYProgress}
+                        />
+                    ))}
                 </div>
             </div>
         </section>
+    );
+};
+
+const TestimonialCard = ({
+    testimonial: t,
+    index: i,
+    total,
+    scrollYProgress
+}: {
+    testimonial: typeof testimonials[0],
+    index: number,
+    total: number,
+    scrollYProgress: MotionValue<number>
+}) => {
+    const start = (i / total) * 0.8;
+    const end = start + 0.2;
+
+    const y = useTransform(
+        scrollYProgress,
+        [start - 0.1, start, 1],
+        [800, 0, 0]
+    );
+
+    const scale = useTransform(
+        scrollYProgress,
+        [end, end + 0.1],
+        [1, 0.98]
+    );
+
+    const opacity = useTransform(
+        scrollYProgress,
+        [end, end + 0.1],
+        [1, 0.9]
+    );
+
+    return (
+        <motion.div
+            style={{
+                y,
+                scale: i < total - 1 ? scale : 1,
+                opacity: i < total - 1 ? opacity : 1,
+                zIndex: i
+            }}
+            className="absolute inset-x-6 mx-auto bg-white rounded-xl p-8 md:p-12 border border-gray-200 shadow-none flex flex-col justify-between h-[360px] md:h-[420px] max-h-[50vh]"
+        >
+            <div>
+                <span className="text-[10px] font-bold tracking-[0.2em] text-gray-400 mb-6 block uppercase">
+                    {t.category}
+                </span>
+                <p className="text-lg md:text-xl lg:text-2xl font-medium leading-[1.4] text-dark-primary tracking-tight">
+                    "{t.quote}"
+                </p>
+            </div>
+            <div className="flex items-center gap-4 mt-8">
+                <div className="w-10 h-10 rounded-full bg-gray-100 border border-gray-200" />
+                <div>
+                    <div className="font-bold text-sm md:text-base text-dark-primary">{t.author}</div>
+                    <div className="text-[10px] md:text-xs text-gray-400 font-medium">{t.title}</div>
+                </div>
+            </div>
+        </motion.div>
     );
 };

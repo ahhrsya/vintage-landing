@@ -1,5 +1,5 @@
 import { HeroSectionV2 } from '../components/sections/HeroSectionV2';
-import { AboutUsSection } from '../components/sections/AboutUsSection';
+import { AboutSectionV2 } from '../components/sections/AboutSectionV2';
 import { TabsFeatureSection } from '../components/sections/TabsFeatureSection';
 import { OperatingSystemSection } from '../components/sections/OperatingSystemSection';
 import { TestimonialStickySection } from '../components/sections/TestimonialStickySection';
@@ -11,7 +11,7 @@ export const HomeV2 = () => {
     return (
         <>
             <HeroSectionV2 />
-            <AboutUsSection />
+            <AboutSectionV2 />
             <TabsFeatureSection />
             <OperatingSystemSection />
             <TestimonialStickySection />

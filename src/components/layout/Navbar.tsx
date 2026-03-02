@@ -26,7 +26,7 @@ export const Navbar = () => {
     return (
         <div className="fixed top-8 left-0 right-0 z-50 px-6 transition-all duration-300">
             <nav
-                className={`max-w-[1000px] mx-auto transition-all duration-300 rounded-full px-4 py-2 flex items-center justify-between border ${isScrolled
+                className={`max-w-[1000px] mx-auto transition-all duration-300 rounded-[16px] px-4 py-2 flex items-center justify-between border ${isScrolled
                     ? 'bg-white/90 backdrop-blur-md border-gray-200 shadow-xl py-3'
                     : 'bg-white border-transparent py-4 shadow-lg'
                     }`}
@@ -94,7 +94,7 @@ export const Navbar = () => {
 
                 {/* Action Button */}
                 <div className="pr-1">
-                    <Button variant="primary" className="rounded-full px-8 bg-black border-black text-white text-sm font-bold h-11">
+                    <Button variant="primary" className="rounded-full px-8 bg-[#007AFF] border-[#007AFF] text-white text-sm font-bold h-11 hover:bg-blue-600 transition-colors">
                         Contact
                     </Button>
                 </div>

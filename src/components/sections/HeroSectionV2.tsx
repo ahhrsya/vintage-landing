@@ -77,7 +77,7 @@ export const HeroSectionV2 = () => {
                         </SectionReveal>
 
                         <SectionReveal delay={0.4} className="flex flex-col sm:flex-row items-center gap-6 mb-12">
-                            <button className="w-full sm:w-auto px-8 py-5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition-all flex items-center justify-center gap-3 group shadow-xl shadow-blue-500/20">
+                            <button className="w-full sm:w-auto px-8 py-5 bg-[#007AFF] hover:bg-blue-600 text-white rounded-xl font-bold transition-all flex items-center justify-center gap-3 group shadow-xl shadow-blue-500/20">
                                 Request a Demo
                                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                             </button>

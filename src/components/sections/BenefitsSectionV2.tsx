@@ -55,7 +55,7 @@ export const BenefitsSectionV2 = () => {
                     {benefits.map((benefit, i) => (
                         <SectionReveal key={benefit.title} delay={i * 0.1}>
                             <div className="flex flex-col items-start text-left">
-                                <div className="w-10 h-10 rounded-lg bg-[#1a1c23] flex items-center justify-center mb-8 shadow-lg shadow-black/5">
+                                <div className="w-10 h-10 rounded-lg bg-[#007AFF] flex items-center justify-center mb-8 shadow-lg shadow-blue-500/20">
                                     {benefit.icon}
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-4">{benefit.title}</h3>

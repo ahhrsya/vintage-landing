@@ -136,7 +136,7 @@ export const FeatureGridV2 = () => {
                                 </p>
 
                                 <div className="flex flex-wrap items-center gap-8">
-                                    <button className="px-8 py-4 bg-gray-950 text-white rounded-xl font-bold hover:bg-black transition-all shadow-xl shadow-black/10">
+                                    <button className="px-8 py-4 bg-[#007AFF] text-white rounded-xl font-bold hover:bg-blue-600 transition-all shadow-xl shadow-blue-500/20">
                                         View use cases
                                     </button>
 

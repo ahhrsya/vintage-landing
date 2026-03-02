@@ -1,36 +1,36 @@
 import { SectionReveal } from '../ui/SectionReveal';
-import { TrendingUp, DollarSign, BarChart3, RefreshCw, Puzzle, ShieldCheck } from 'lucide-react';
+import { Database, BarChart3, Send, ShieldCheck, History, Shield } from 'lucide-react';
 
 const benefits = [
     {
-        icon: <TrendingUp className="w-5 h-5 text-white" />,
-        title: "Increased efficiency",
-        desc: "AI agents handle tasks instantly, speeding up delivery across workflows."
-    },
-    {
-        icon: <DollarSign className="w-5 h-5 text-white" />,
-        title: "Lower Operational Costs",
-        desc: "Automate repetitive work and scale operations without scaling your headcount."
+        icon: <Database className="w-5 h-5 text-white" />,
+        title: "Automated Ingestion",
+        desc: "PDFs, emails, and API feeds — processed, classified, and routed automatically."
     },
     {
         icon: <BarChart3 className="w-5 h-5 text-white" />,
-        title: "Smarter Decision-Making",
-        desc: "Turn scattered data into actionable insights with AI-powered analysis."
+        title: "Intelligent Analytics",
+        desc: "Query your data in natural language. Get answers with full attribution."
     },
     {
-        icon: <RefreshCw className="w-5 h-5 text-white" />,
-        title: "24/7 Workflow Continuity",
-        desc: "Run critical processes nonstop — even outside business hours."
-    },
-    {
-        icon: <Puzzle className="w-5 h-5 text-white" />,
-        title: "Seamless Integration",
-        desc: "Connect with your current tools and systems in minutes, not months."
+        icon: <Send className="w-5 h-5 text-white" />,
+        title: "Automation & Outreach",
+        desc: "Scheduled reports, alerts, and stakeholder communications — on your terms."
     },
     {
         icon: <ShieldCheck className="w-5 h-5 text-white" />,
+        title: "Regulatory Reporting",
+        desc: "FATCA, CRS, Form PF — generated automatically from your verified data."
+    },
+    {
+        icon: <History className="w-5 h-5 text-white" />,
+        title: "Audit Trail",
+        desc: "Every change, every access, every calculation — fully traceable and immutable."
+    },
+    {
+        icon: <Shield className="w-5 h-5 text-white" />,
         title: "Enterprise-Grade Security",
-        desc: "Protect sensitive data with encrypted, compliant, and secure AI operations."
+        desc: "Bank-grade security with 256-bit encryption and SOC 2 Type II compliance."
     }
 ];
 

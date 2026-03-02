@@ -1,8 +1,10 @@
 import { Navbar } from './components/layout/Navbar';
 import { HeroSection } from './components/sections/HeroSection';
 import { AboutUsSection } from './components/sections/AboutUsSection';
+import { TabsFeatureSection } from './components/sections/TabsFeatureSection';
 import { FeaturesSection } from './components/sections/FeaturesSection';
 import { OperatingSystemSection } from './components/sections/OperatingSystemSection';
+import { TestimonialStickySection } from './components/sections/TestimonialStickySection';
 import { AutomationSection } from './components/sections/AutomationSection';
 import { SecuritySection } from './components/sections/SecuritySection';
 import { CTASection } from './components/sections/CTASection';
@@ -15,8 +17,10 @@ function App() {
       <main>
         <HeroSection />
         <AboutUsSection />
+        <TabsFeatureSection />
         <FeaturesSection />
         <OperatingSystemSection />
+        <TestimonialStickySection />
         <AutomationSection />
         <SecuritySection />
         <CTASection />

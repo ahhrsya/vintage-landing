@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { SectionReveal } from '../ui/SectionReveal';
-import { ArrowRight, Star, Clock, UserCheck, TrendingUp } from 'lucide-react';
+import { ArrowRight, Star, Clock, TrendingUp } from 'lucide-react';
 
 export const HeroSectionV2 = () => {
     return (
@@ -28,10 +28,9 @@ export const HeroSectionV2 = () => {
                                     letterSpacing: '-3px',
                                     fontSize: '72px'
                                 }}
-                                className="text-white mb-8 leading-[1.05] drop-shadow-2xl"
+                                className="text-white mb-8 leading-[1.05] drop-shadow-2xl max-w-lg"
                             >
-                                Ultimate Guide to the <br />
-                                Right Asset
+                                Ultimate Guide to the Right Asset
                             </h1>
                         </SectionReveal>
 
@@ -68,7 +67,7 @@ export const HeroSectionV2 = () => {
                     </div>
 
                     {/* Right Side: Visual Components */}
-                    <div className="relative h-[600px] flex items-center justify-center scale-90 lg:scale-95">
+                    <div className="relative h-[600px] flex items-center justify-center scale-75 lg:scale-80">
                         {/* Center Large Card (Visistors) */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.8 }}
@@ -173,15 +172,6 @@ export const HeroSectionV2 = () => {
                                     <div className="w-3 h-3 bg-white rounded-full shadow-sm" />
                                 </div>
                             </div>
-                        </motion.div>
-
-                        {/* Smaller Floating Icons */}
-                        <motion.div
-                            animate={{ y: [0, -10, 0] }}
-                            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                            className="absolute top-20 -left-16 p-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 text-white z-10"
-                        >
-                            <UserCheck size={20} />
                         </motion.div>
                     </div>
 

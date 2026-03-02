@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { Badge } from '../ui/Badge';
 import { Button } from '../ui/Button';
 import { SectionReveal } from '../ui/SectionReveal';
-import dashboardImg from '../../assets/Dashboard.png';
+import dashboardImg from '../../assets/dashboard_upadtee.png';
 
 declare global {
     interface Window {

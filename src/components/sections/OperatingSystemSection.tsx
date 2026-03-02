@@ -1,177 +1,237 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SectionReveal } from '../ui/SectionReveal';
-import { MockCard, StatusTag } from '../ui/MockDashboard';
+import { StatusTag } from '../ui/MockDashboard';
+import { FileText, CheckCircle2, Database, ArrowRight } from 'lucide-react';
 
 type TabId = 'record' | 'unstructured' | 'close';
+
+interface TabData {
+    id: TabId;
+    title: string;
+    description: string;
+}
 
 export const OperatingSystemSection = () => {
     const [activeTab, setActiveTab] = useState<TabId>('record');
 
-    const tabs = [
-        { id: 'record' as const, label: 'System of Record' },
-        { id: 'unstructured' as const, label: 'Unstructured to Structured' },
-        { id: 'close' as const, label: 'Month-End Close' },
+    const tabs: TabData[] = [
+        {
+            id: 'record',
+            title: 'System of Record',
+            description: 'Every position, transaction, document, and contact — consolidated in a single, auditable system. No more stitching together spreadsheets, PDFs, and portal logins.'
+        },
+        {
+            id: 'unstructured',
+            title: 'Unstructured to Structured',
+            description: 'Finage reads PDFs, scans, and emails — and turns them into structured, reconciled data. AI-powered document intelligence, purpose-built for the family office.'
+        },
+        {
+            id: 'close',
+            title: 'Month-End Close',
+            description: 'Automate every step of the close — from reconciliation to reporting. Finage eliminates the bottlenecks that keep your team stuck in spreadsheets every month.'
+        },
     ];
 
     return (
         <section className="py-32 bg-dark-primary text-white overflow-hidden">
             <div className="max-w-[1200px] mx-auto px-6">
-                <SectionReveal className="text-center mb-16">
-                    <h2 className="section-h2 mb-4">Built as an Operating System — Not a Dashboard</h2>
-                </SectionReveal>
+                <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
 
-                {/* Tab Switcher */}
-                <div className="flex justify-center mb-20">
-                    <div className="inline-flex items-center p-1 bg-dark-card border border-white/5 rounded-full">
-                        {tabs.map((tab) => (
-                            <button
-                                key={tab.id}
-                                onClick={() => setActiveTab(tab.id)}
-                                className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 relative ${activeTab === tab.id ? 'text-white' : 'text-gray-500 hover:text-gray-300'
-                                    }`}
-                            >
-                                {activeTab === tab.id && (
-                                    <motion.div
-                                        layoutId="activeTab"
-                                        className="absolute inset-0 bg-accent-primary rounded-full shadow-lg"
-                                        transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
-                                    />
-                                )}
-                                <span className="relative z-10">{tab.label}</span>
-                            </button>
-                        ))}
+                    {/* Left Column: UI List matching Mercury style */}
+                    <div className="lg:col-span-5 pt-12">
+                        <SectionReveal>
+                            <h2 className="text-4xl md:text-5xl font-bold leading-[1.1] tracking-[-0.04em] mb-12">
+                                Built as an Operating System — Not a Dashboard
+                            </h2>
+                        </SectionReveal>
+
+                        <div className="space-y-0">
+                            {tabs.map((tab) => (
+                                <div key={tab.id} className="border-t border-white/10 last:border-b">
+                                    <button
+                                        onClick={() => setActiveTab(tab.id)}
+                                        className="w-full text-left py-8 group relative outline-none"
+                                    >
+                                        <div className="flex items-start gap-4">
+                                            {/* Dot Indicator */}
+                                            <div className="mt-2 relative">
+                                                <div className={`w-2 h-2 rounded-full transition-all duration-300 ${activeTab === tab.id ? 'bg-blue-500 scale-125' : 'bg-transparent'}`} />
+                                                {activeTab === tab.id && (
+                                                    <motion.div
+                                                        layoutId="activeDot"
+                                                        className="absolute inset-0 bg-blue-500 rounded-full blur-[4px]"
+                                                    />
+                                                )}
+                                            </div>
+
+                                            <div className="flex-1">
+                                                <h3 className={`text-xl font-bold transition-colors duration-300 ${activeTab === tab.id ? 'text-white' : 'text-gray-500 group-hover:text-gray-300'}`}>
+                                                    {tab.title}
+                                                </h3>
+
+                                                <AnimatePresence>
+                                                    {activeTab === tab.id && (
+                                                        <motion.div
+                                                            initial={{ height: 0, opacity: 0 }}
+                                                            animate={{ height: 'auto', opacity: 1 }}
+                                                            exit={{ height: 0, opacity: 0 }}
+                                                            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                                                            className="overflow-hidden"
+                                                        >
+                                                            <p className="mt-4 text-gray-400 leading-relaxed text-sm md:text-base pr-4">
+                                                                {tab.description}
+                                                            </p>
+                                                            <div className="mt-6 flex items-center gap-2 text-blue-500 font-bold text-sm tracking-tight cursor-pointer hover:gap-3 transition-all">
+                                                                Explore More <ArrowRight size={14} />
+                                                            </div>
+                                                        </motion.div>
+                                                    )}
+                                                </AnimatePresence>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </div>
 
-                {/* Tab Content */}
-                <div className="min-h-[500px]">
-                    <AnimatePresence mode="wait">
-                        <motion.div
-                            key={activeTab}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -20 }}
-                            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                        >
-                            <TabContent activeTab={activeTab} />
-                        </motion.div>
-                    </AnimatePresence>
+                    {/* Right Column: Visual Mockup matching Mercury style */}
+                    <div className="lg:col-span-7 sticky top-32">
+                        <div className="relative aspect-[4/3] w-full bg-dark-secondary rounded-[32px] border border-white/10 overflow-hidden shadow-2xl p-8 md:p-12">
+                            {/* Decorative background glow */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent" />
+
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={activeTab}
+                                    initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                                    exit={{ opacity: 0, scale: 1.1, y: -20 }}
+                                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                                    className="relative w-full h-full flex items-center justify-center pt-8"
+                                >
+                                    <VisualContent activeTab={activeTab} />
+                                </motion.div>
+                            </AnimatePresence>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
     );
 };
 
-const TabContent = ({ activeTab }: { activeTab: TabId }) => {
+const VisualContent = ({ activeTab }: { activeTab: TabId }) => {
     if (activeTab === 'record') {
         return (
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h3 className="section-h2 text-3xl mb-6">System of Record</h3>
-                    <p className="text-lg text-gray-400 mb-8 leading-relaxed">
-                        Every position, transaction, document, and contact — consolidated in a single,
-                        auditable system. No more stitching together spreadsheets, PDFs, and portal logins.
-                    </p>
-                    <div className="space-y-4">
-                        {[
-                            "Consolidated multi-entity ledger",
-                            "Direct connection to 500+ financial institutions",
-                            "Real-time audit history of every transaction"
-                        ].map((item) => (
-                            <div key={item} className="flex items-center gap-3 text-gray-300">
-                                <span className="w-1.5 h-1.5 rounded-full bg-accent-primary" />
-                                <span>{item}</span>
-                            </div>
-                        ))}
+            <div className="w-full max-w-md bg-dark-primary rounded-2xl border border-white/5 shadow-2xl p-6">
+                <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/5">
+                    <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-blue-500 flex items-center justify-center">
+                            <Database size={16} className="text-white" />
+                        </div>
+                        <span className="font-bold text-sm">Ledger Overview</span>
                     </div>
+                    <div className="text-[10px] uppercase font-bold text-gray-500 tracking-widest">Live Sync</div>
                 </div>
-                <MockCard title="Ledger Overview">
-                    <div className="space-y-4">
-                        {[
-                            { name: 'Equity Infusion - Entitiy A', val: '+$5,000,000', status: 'Complete' },
-                            { name: 'Management Fee - Q3', val: '-$125,000', status: 'Complete' },
-                            { name: 'Capital Call - Fund IV', val: '-$2,450,000', status: 'Complete' },
-                            { name: 'Dividend Inflow', val: '+$48,200', status: 'Complete' },
-                        ].map((row) => (
-                            <div key={row.name} className="flex items-center justify-between text-xs pb-3 border-b border-white/5 last:border-0 last:pb-0">
-                                <div className="flex flex-col gap-0.5">
-                                    <span className="text-gray-200 font-medium">{row.name}</span>
-                                    <span className="text-gray-500">{row.val}</span>
-                                </div>
-                                <StatusTag status={row.status} />
-                            </div>
-                        ))}
-                    </div>
-                </MockCard>
-            </div>
-        );
-    }
-
-    if (activeTab === 'unstructured') {
-        return (
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h3 className="section-h2 text-3xl mb-6">From Unstructured Documents to Structured Intelligence</h3>
-                    <p className="text-lg text-gray-400 mb-8 leading-relaxed">
-                        Finage reads PDFs, scans, and emails — and turns them into structured,
-                        reconciled data. AI-powered document intelligence, purpose-built for the family office.
-                    </p>
-                    <a href="#" className="text-accent-primary font-semibold hover:underline">Explore document intelligence →</a>
-                </div>
-                <div className="space-y-6">
+                <div className="space-y-4">
                     {[
-                        { title: "Extracts data from PDFs, scans, emails", desc: "Native OCR and NLP" },
-                        { title: "Classifies and maps to your chart of accounts", desc: "Custom taxonomic mapping" },
-                        { title: "Flags exceptions with confidence scoring", desc: "Human-in-the-loop validation" },
-                    ].map((item, i) => (
-                        <motion.div
-                            key={i}
-                            initial={{ x: 20, opacity: 0 }}
-                            animate={{ x: 0, opacity: 1 }}
-                            transition={{ delay: i * 0.1 }}
-                            className="p-5 bg-dark-card border border-white/10 rounded-xl"
-                        >
-                            <h4 className="font-bold text-white mb-1">{item.title}</h4>
-                            <p className="text-sm text-gray-500">{item.desc}</p>
-                        </motion.div>
+                        { name: 'Equity Infusion - Entity A', val: '+$5,000,000', status: 'Complete' },
+                        { name: 'Management Fee - Q3', val: '-$125,000', status: 'Complete' },
+                        { name: 'Capital Call - Fund IV', val: '-$2,450,000', status: 'Complete' },
+                        { name: 'Dividend Inflow', val: '+$48,200', status: 'Complete' },
+                    ].map((row, i) => (
+                        <div key={i} className="flex items-center justify-between text-xs pb-3 border-b border-white/5 last:border-0 last:pb-0">
+                            <div className="flex flex-col gap-0.5">
+                                <span className="text-gray-200 font-medium">{row.name}</span>
+                                <span className="text-gray-500">{row.val}</span>
+                            </div>
+                            <StatusTag status={row.status} />
+                        </div>
                     ))}
                 </div>
             </div>
         );
     }
 
-    return (
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <h3 className="section-h2 text-3xl mb-6">Month-End Close in Hours — Not Weeks</h3>
-                <p className="text-lg text-gray-400 mb-8 leading-relaxed">
-                    Automate every step of the close — from reconciliation to reporting.
-                    Finage eliminates the bottlenecks that keep your team stuck in spreadsheets every month.
-                </p>
-                <a href="#" className="text-accent-primary font-semibold hover:underline">See how it works →</a>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    if (activeTab === 'unstructured') {
+        return (
+            <div className="w-full grid grid-cols-1 gap-4 max-w-lg">
+                <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-blue-500 flex items-center justify-center">
+                            <FileText size={16} className="text-white" />
+                        </div>
+                        <span className="font-bold text-sm uppercase tracking-widest text-gray-400">Processing Documents</span>
+                    </div>
+                </div>
                 {[
-                    "Automated multi-entity reconciliation",
-                    "Exception management with AI triage",
-                    "One-click report generation for stakeholders",
-                    "Full audit trail for every adjustment"
+                    { title: "K-1 Statement (PDF)", status: "Extracted", conf: "99.8%" },
+                    { title: "Capital Call Notice (Email)", status: "Classified", conf: "98.2%" },
+                    { title: "Tax Return (Scan)", status: "Mapped", conf: "100%" },
                 ].map((item, i) => (
                     <motion.div
                         key={i}
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
+                        initial={{ x: -20, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
                         transition={{ delay: i * 0.1 }}
-                        className="p-6 bg-dark-card border border-white/10 rounded-xl flex flex-col gap-3"
+                        className="p-5 bg-dark-card border border-white/5 rounded-2xl flex items-center justify-between"
                     >
-                        <div className="w-8 h-8 rounded-full bg-accent-primary/20 flex items-center justify-center">
-                            <span className="text-accent-primary text-xs font-bold">{i + 1}</span>
+                        <div className="flex items-center gap-4">
+                            <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">
+                                <FileText size={18} className="text-blue-500" />
+                            </div>
+                            <div>
+                                <h4 className="font-bold text-white text-sm mb-1">{item.title}</h4>
+                                <div className="flex items-center gap-3">
+                                    <span className="text-[10px] text-gray-500 uppercase font-bold">{item.status}</span>
+                                    <div className="w-1 h-1 rounded-full bg-gray-600" />
+                                    <span className="text-[10px] text-blue-400 font-bold">{item.conf} Confidence</span>
+                                </div>
+                            </div>
                         </div>
-                        <p className="text-sm font-medium text-gray-200">{item}</p>
+                        <CheckCircle2 size={18} className="text-status-success" />
                     </motion.div>
                 ))}
+            </div>
+        );
+    }
+
+    return (
+        <div className="w-full flex flex-col gap-6 max-w-md">
+            <div className="flex items-center gap-3 mb-2">
+                <div className="w-8 h-8 rounded-lg bg-blue-500 flex items-center justify-center">
+                    <CheckCircle2 size={16} className="text-white" />
+                </div>
+                <span className="font-bold text-sm uppercase tracking-widest text-gray-400">Month-End Checklist</span>
+            </div>
+            {[
+                "Reconcile Multi-Entity Ledger",
+                "Automate Intercompany Eliminations",
+                "Generate Q4 Investor Statements",
+                "Audit Trail Validation"
+            ].map((text, i) => (
+                <motion.div
+                    key={i}
+                    className="flex items-center gap-4 p-4 bg-white/5 border border-white/5 rounded-xl"
+                >
+                    <div className="w-5 h-5 rounded-full border border-blue-500/50 flex items-center justify-center">
+                        <motion.div
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            transition={{ delay: 0.5 + i * 0.1 }}
+                            className="w-2.5 h-2.5 rounded-full bg-blue-500"
+                        />
+                    </div>
+                    <span className="text-sm font-medium text-gray-200">{text}</span>
+                </motion.div>
+            ))}
+            <div className="mt-4 p-4 rounded-xl bg-blue-500/10 border border-blue-500/20 text-center">
+                <span className="text-blue-400 text-xs font-bold uppercase tracking-widest">Close completed in 2.4 hours</span>
             </div>
         </div>
     );
 };
+

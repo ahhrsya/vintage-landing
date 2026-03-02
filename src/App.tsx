@@ -1,7 +1,6 @@
 import { Navbar } from './components/layout/Navbar';
 import { HeroSection } from './components/sections/HeroSection';
 import { AboutUsSection } from './components/sections/AboutUsSection';
-import { MetricsSection } from './components/sections/MetricsSection';
 import { FeaturesSection } from './components/sections/FeaturesSection';
 import { OperatingSystemSection } from './components/sections/OperatingSystemSection';
 import { AutomationSection } from './components/sections/AutomationSection';
@@ -16,7 +15,6 @@ function App() {
       <main>
         <HeroSection />
         <AboutUsSection />
-        <MetricsSection />
         <FeaturesSection />
         <OperatingSystemSection />
         <AutomationSection />

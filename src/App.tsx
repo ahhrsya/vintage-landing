@@ -1,30 +1,23 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/layout/Navbar';
-import { HeroSection } from './components/sections/HeroSection';
-import { AboutUsSection } from './components/sections/AboutUsSection';
-import { TabsFeatureSection } from './components/sections/TabsFeatureSection';
-import { OperatingSystemSection } from './components/sections/OperatingSystemSection';
-import { TestimonialStickySection } from './components/sections/TestimonialStickySection';
-import { AutomationSection } from './components/sections/AutomationSection';
-import { SecuritySection } from './components/sections/SecuritySection';
-import { CTASection } from './components/sections/CTASection';
 import { Footer } from './components/layout/Footer';
+import { HomeV1 } from './pages/HomeV1';
+import { HomeV2 } from './pages/HomeV2';
 
 function App() {
   return (
-    <div className="font-sans antialiased bg-dark-primary text-white">
-      <Navbar />
-      <main>
-        <HeroSection />
-        <AboutUsSection />
-        <TabsFeatureSection />
-        <OperatingSystemSection />
-        <TestimonialStickySection />
-        <AutomationSection />
-        <SecuritySection />
-        <CTASection />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <div className="font-sans antialiased bg-dark-primary text-white">
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<HomeV1 />} />
+            <Route path="/v2" element={<HomeV2 />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

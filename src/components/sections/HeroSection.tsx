@@ -72,7 +72,7 @@ export const HeroSection = () => {
                 {/* Dashboard Mockup without Frame */}
                 <SectionReveal delay={0.5} className="relative max-w-5xl mx-auto pointer-events-auto mt-20 px-4">
                     {/* Background Unicorn Studio Effect - Manual Embed */}
-                    <div className="absolute -top-[450px] left-1/2 -translate-x-1/2 z-[-1] pointer-events-none">
+                    <div className="absolute -top-[600px] left-1/2 -translate-x-1/2 z-[-1] pointer-events-none">
                         <div
                             ref={effectRef}
                             data-us-project="6ocpWTjaHpQEGn7yK5Gz"

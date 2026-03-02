@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: "Manrope", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "DM Serif Display", Georgia, serif;
 
   --color-dark-primary: #09090b;
   --color-dark-secondary: #111113;
@@ -29,6 +29,7 @@
   --shadow-light-card-hover: 0 4px 24px rgba(0, 0, 0, 0.08),
     0 8px 32px rgba(0, 0, 0, 0.04);
   --shadow-btn-hover: 0 8px 32px rgba(59, 130, 246, 0.3);
+  --radius-card: 12px;
 
   --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }

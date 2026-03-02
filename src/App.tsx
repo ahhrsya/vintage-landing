@@ -2,7 +2,6 @@ import { Navbar } from './components/layout/Navbar';
 import { HeroSection } from './components/sections/HeroSection';
 import { AboutUsSection } from './components/sections/AboutUsSection';
 import { TabsFeatureSection } from './components/sections/TabsFeatureSection';
-import { FeaturesSection } from './components/sections/FeaturesSection';
 import { OperatingSystemSection } from './components/sections/OperatingSystemSection';
 import { TestimonialStickySection } from './components/sections/TestimonialStickySection';
 import { AutomationSection } from './components/sections/AutomationSection';
@@ -18,7 +17,6 @@ function App() {
         <HeroSection />
         <AboutUsSection />
         <TabsFeatureSection />
-        <FeaturesSection />
         <OperatingSystemSection />
         <TestimonialStickySection />
         <AutomationSection />

@@ -59,7 +59,7 @@ export const AboutUsSection = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                        className="bg-dark-secondary rounded-2xl border border-white/10 shadow-2xl overflow-hidden p-1"
+                        className="bg-dark-secondary rounded-xl border border-white/10 shadow-2xl overflow-hidden p-1"
                     >
                         {/* Browser Header */}
                         <div className="flex items-center gap-1.5 px-4 py-3 bg-dark-secondary border-b border-white/5">

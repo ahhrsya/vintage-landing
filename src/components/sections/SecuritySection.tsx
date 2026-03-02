@@ -29,7 +29,7 @@ export const SecuritySection = () => {
     return (
         <section className="py-32 bg-dark-primary text-white overflow-hidden">
             <div className="max-w-[1200px] mx-auto px-6">
-                <div className="grid lg:grid-cols-2 gap-20 items-center">
+                <div className="grid lg:grid-cols-2 gap-20 items-stretch">
                     <SectionReveal>
                         <span className="eyebrow block mb-4">Enterprise Security</span>
                         <h2 className="section-h2 mb-6">
@@ -42,7 +42,7 @@ export const SecuritySection = () => {
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             {badges.map((badge) => (
-                                <div key={badge.title} className="p-6 bg-dark-card border border-white/5 rounded-2xl flex flex-col gap-4">
+                                <div key={badge.title} className="p-6 bg-dark-card border border-white/5 rounded-[12px] flex flex-col gap-4">
                                     <div className="w-10 h-10 rounded-full bg-accent-primary/10 flex items-center justify-center">
                                         {badge.icon}
                                     </div>
@@ -55,9 +55,9 @@ export const SecuritySection = () => {
                         </div>
                     </SectionReveal>
 
-                    <SectionReveal delay={0.2} className="relative aspect-video bg-dark-secondary rounded-3xl border border-white/10 overflow-hidden shadow-2xl flex items-center justify-center p-12">
+                    <SectionReveal delay={0.2} className="relative bg-dark-secondary rounded-xl border border-white/10 overflow-hidden shadow-2xl flex flex-col p-12 min-h-[500px]">
                         <div className="absolute inset-0 bg-gradient-to-br from-accent-primary/10 to-transparent" />
-                        <div className="relative w-full h-full border border-white/5 rounded-2xl bg-dark-primary p-8 flex flex-col gap-6">
+                        <div className="relative w-full h-full border border-white/5 rounded-xl bg-dark-primary p-8 flex flex-col gap-6">
                             <div className="flex items-center gap-3 border-b border-white/5 pb-4">
                                 <div className="w-12 h-12 rounded-xl bg-accent-primary flex items-center justify-center shadow-lg shadow-accent-primary/20">
                                     <Shield className="text-white w-7 h-7" />

@@ -84,7 +84,7 @@ export const TestimonialStickySection = () => {
                                     opacity: i < testimonials.length - 1 ? opacity : 1,
                                     zIndex: i
                                 }}
-                                className="absolute inset-x-6 mx-auto bg-white rounded-[32px] md:rounded-[40px] p-8 md:p-12 border border-gray-200 shadow-none flex flex-col justify-between h-[360px] md:h-[420px] max-h-[50vh]"
+                                className="absolute inset-x-6 mx-auto bg-white rounded-xl p-8 md:p-12 border border-gray-200 shadow-none flex flex-col justify-between h-[360px] md:h-[420px] max-h-[50vh]"
                             >
                                 <div>
                                     <span className="text-[10px] font-bold tracking-[0.2em] text-gray-400 mb-6 block uppercase">

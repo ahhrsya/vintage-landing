@@ -123,7 +123,7 @@ export const OperatingSystemSection = () => {
 
                     {/* Right Column: Visual Mockup matching Mercury style */}
                     <div className="lg:col-span-7 sticky top-32">
-                        <div className="relative aspect-[4/3] w-full bg-dark-secondary rounded-[32px] border border-white/10 overflow-hidden shadow-2xl p-8 md:p-12">
+                        <div className="relative aspect-[4/3] w-full bg-dark-secondary rounded-xl border border-white/10 overflow-hidden shadow-2xl p-8 md:p-12">
                             {/* Decorative background glow */}
                             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent" />
 
@@ -151,7 +151,7 @@ export const OperatingSystemSection = () => {
 const VisualContent = ({ activeTab }: { activeTab: TabId }) => {
     if (activeTab === 'record') {
         return (
-            <div className="w-full max-w-md bg-dark-primary rounded-2xl border border-white/5 shadow-2xl p-6">
+            <div className="w-full max-w-md bg-dark-primary rounded-xl border border-white/5 shadow-2xl p-6">
                 <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/5">
                     <div className="flex items-center gap-3">
                         <div className="w-8 h-8 rounded-lg bg-blue-500 flex items-center justify-center">
@@ -202,7 +202,7 @@ const VisualContent = ({ activeTab }: { activeTab: TabId }) => {
                         initial={{ x: -20, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
                         transition={{ delay: i * 0.1 }}
-                        className="p-5 bg-dark-card border border-white/5 rounded-2xl flex items-center justify-between"
+                        className="p-5 bg-dark-card border border-white/5 rounded-xl flex items-center justify-between"
                     >
                         <div className="flex items-center gap-4">
                             <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">

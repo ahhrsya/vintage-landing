@@ -44,15 +44,17 @@ export const HeroSection = () => {
                 </SectionReveal>
 
                 {/* Dashboard Mockup without Frame */}
-                <SectionReveal delay={0.5} className="relative max-w-5xl mx-auto pointer-events-auto">
-                    {/* Background Unicorn Studio Effect - Full intensity, positioned precisely behind dashboard top */}
-                    <div className="absolute -top-[400px] left-1/2 -translate-x-1/2 w-[140%] h-[800px] z-[-1] pointer-events-none overflow-hidden">
+                <SectionReveal delay={0.5} className="relative max-w-5xl mx-auto pointer-events-auto mt-20">
+                    {/* Background Unicorn Studio Effect - Positioned clearly above the mockup */}
+                    <div className="absolute -top-[180px] left-1/2 -translate-x-1/2 w-full h-[600px] z-[-1] pointer-events-none">
                         <div className="w-full h-full relative">
                             <UnicornScene projectId="6ocpWTjaHpQEGn7yK5Gz" className="w-full h-full" />
+                            {/* Decorative glow to ensure visibility */}
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-blue-500/20 blur-[120px] rounded-full" />
                         </div>
                     </div>
 
-                    <div className="relative z-10 rounded-2xl shadow-[0_0_100px_rgba(37,99,235,0.2)] overflow-hidden border border-white/5 bg-dark-primary">
+                    <div className="relative z-10 rounded-2xl shadow-2xl overflow-hidden border border-white/5 bg-dark-primary">
                         {/* Dashboard Image */}
                         <img
                             src={dashboardImg}

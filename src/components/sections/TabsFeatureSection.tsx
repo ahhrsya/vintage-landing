@@ -120,45 +120,49 @@ export const TabsFeatureSection = () => {
                     {/* Right: Sticky Mockup */}
                     <div className="hidden lg:block lg:w-1/2">
                         <div className="sticky top-[20vh] h-[60vh] flex items-center justify-center">
-                            <div className="bg-gray-50 rounded-[40px] p-6 border border-gray-100 shadow-sm relative overflow-hidden w-full aspect-[4/3]">
-                                <img
-                                    src={dashboardImg}
-                                    alt="Revenue Automation"
-                                    className="w-full h-full object-cover rounded-2xl shadow-2xl border border-gray-200"
-                                />
-
-                                {/* Dynamic Floating Agent Card */}
+                            <div className="relative w-full aspect-[4/3]">
                                 <AnimatePresence mode="wait">
                                     <motion.div
                                         key={features[activeIndex].id}
-                                        initial={{ opacity: 0, y: 20, x: 20 }}
-                                        animate={{ opacity: 1, y: 0, x: 0 }}
-                                        exit={{ opacity: 0, y: -20, x: 20 }}
-                                        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                                        className="absolute top-1/2 -right-8 -translate-y-1/2 bg-white rounded-2xl p-5 shadow-2xl border border-gray-100 max-w-[220px]"
+                                        initial={{ opacity: 0, scale: 0.98, y: 10 }}
+                                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                                        exit={{ opacity: 0, scale: 1.02, y: -10 }}
+                                        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                                        className="bg-gray-50 rounded-[40px] p-6 border border-gray-100 shadow-sm relative overflow-hidden w-full h-full"
                                     >
-                                        <div className="flex items-center gap-2 mb-3">
-                                            <div className="w-5 h-5 bg-teal-500 rounded-full flex items-center justify-center">
-                                                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>
+                                        {/* Subtle accent background glow */}
+                                        <div className={`absolute inset-0 opacity-[0.03] transition-colors duration-1000 
+                                            ${features[activeIndex].accentColor === 'teal' ? 'bg-teal-500' :
+                                                features[activeIndex].accentColor === 'blue' ? 'bg-blue-500' : 'bg-indigo-500'}`}
+                                        />
+
+                                        <img
+                                            src={dashboardImg}
+                                            alt="Revenue Automation"
+                                            className="w-full h-full object-cover rounded-2xl shadow-2xl border border-gray-200"
+                                        />
+
+                                        {/* Dynamic Floating Agent Card */}
+                                        <motion.div
+                                            initial={{ opacity: 0, scale: 0.9, x: 20 }}
+                                            animate={{ opacity: 1, scale: 1, x: 0 }}
+                                            transition={{ delay: 0.2, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                                            className="absolute top-[45%] -right-8 -translate-y-1/2 bg-white rounded-2xl p-5 shadow-2xl border border-gray-100 max-w-[220px] z-10"
+                                        >
+                                            <div className="flex items-center gap-2 mb-3">
+                                                <div className={`w-5 h-5 rounded-full flex items-center justify-center
+                                                    ${features[activeIndex].accentColor === 'teal' ? 'bg-teal-500' :
+                                                        features[activeIndex].accentColor === 'blue' ? 'bg-blue-500' : 'bg-indigo-500'}`}>
+                                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>
+                                                </div>
+                                                <span className="text-[10px] font-bold uppercase text-gray-400">Agent Action</span>
                                             </div>
-                                            <span className="text-[10px] font-bold uppercase text-gray-400">Agent Action</span>
-                                        </div>
-                                        <p className="text-xs font-medium text-dark-primary leading-normal">
-                                            {features[activeIndex].agentText}
-                                        </p>
+                                            <p className="text-xs font-medium text-dark-primary leading-normal italic">
+                                                {features[activeIndex].agentText}
+                                            </p>
+                                        </motion.div>
                                     </motion.div>
                                 </AnimatePresence>
-
-                                {/* Subtle indicator of which feature is active on the mockup itself if needed */}
-                                <div className="absolute inset-x-8 top-8 flex gap-2">
-                                    {features.map((_, i) => (
-                                        <div
-                                            key={i}
-                                            className={`h-1 flex-1 rounded-full transition-all duration-500 
-                                                ${i === activeIndex ? 'bg-teal-500 w-full' : 'bg-gray-200'}`}
-                                        />
-                                    ))}
-                                </div>
                             </div>
                         </div>
                     </div>

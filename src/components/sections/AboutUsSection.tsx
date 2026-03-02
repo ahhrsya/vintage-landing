@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 
 // Replace with actual image path if provided, using a generic local asset for now
-import imagePlaceholder from '../../assets/sky.jpg';
+import imagePlaceholder from '../../assets/about-image.jpg';
 
 export const AboutUsSection = () => {
     const containerRef = useRef<HTMLDivElement>(null);

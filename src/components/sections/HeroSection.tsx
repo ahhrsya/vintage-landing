@@ -7,11 +7,6 @@ import { UnicornScene } from 'unicornstudio-react';
 export const HeroSection = () => {
     return (
         <section className="relative pt-32 pb-20 bg-dark-primary overflow-hidden">
-            {/* Background Unicorn Studio Effect */}
-            <div className="absolute inset-0 z-0 pointer-events-auto">
-                <UnicornScene projectId="6ocpWTjaHpQEGn7yK5Gz" />
-            </div>
-
             <div className="relative z-10 max-w-[1200px] mx-auto px-6 text-center pointer-events-none">
                 <SectionReveal delay={0.1}>
                     <Badge dot className="mb-8 pointer-events-auto">
@@ -40,18 +35,14 @@ export const HeroSection = () => {
                     <Button variant="outline" size="lg">Watch Overview →</Button>
                 </SectionReveal>
 
-                {/* Dashboard Browser Mockup */}
+                {/* Dashboard Mockup without Frame */}
                 <SectionReveal delay={0.5} className="relative max-w-5xl mx-auto pointer-events-auto">
-                    {/* Optional: Add an absolute wrapper here if effect should precisely overlay dashboard */}
-                    <div className="bg-dark-secondary rounded-2xl border border-white/10 shadow-2xl overflow-hidden p-1 relative z-10">
-                        {/* Browser Header */}
-                        <div className="flex items-center gap-1.5 px-4 py-3 bg-dark-secondary border-b border-white/5">
-                            <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
-                            <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
-                            <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
-                            <div className="ml-4 flex-1 h-5 bg-black/20 rounded-md" />
-                        </div>
+                    {/* Background Unicorn Studio Effect - Positioned behind the top of the mockup */}
+                    <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-full h-[600px] z-0 pointer-events-none opacity-80">
+                        <UnicornScene projectId="6ocpWTjaHpQEGn7yK5Gz" />
+                    </div>
 
+                    <div className="relative z-10 rounded-2xl shadow-2xl overflow-hidden border border-white/5">
                         {/* Dashboard Image */}
                         <div className="bg-dark-primary">
                             <img

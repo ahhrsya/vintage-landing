@@ -1,6 +1,5 @@
 import { Badge } from '../ui/Badge';
 import { Button } from '../ui/Button';
-import { MockCard, MetricValue, DonutChart, StatusTag } from '../ui/MockDashboard';
 import { SectionReveal } from '../ui/SectionReveal';
 
 export const HeroSection = () => {
@@ -48,49 +47,13 @@ export const HeroSection = () => {
                             <div className="ml-4 flex-1 h-5 bg-black/20 rounded-md" />
                         </div>
 
-                        {/* Dashboard Content */}
-                        <div className="p-6 md:p-8 bg-dark-primary grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <MockCard title="Total AUM">
-                                <MetricValue
-                                    value="$4.7B"
-                                    change="↑ 12.3% YTD"
-                                />
-                                <div className="mt-4 flex items-end gap-1 h-12">
-                                    {[40, 60, 45, 70, 55, 80, 65, 90].map((h, i) => (
-                                        <div key={i} className="flex-1 bg-accent-primary/20 rounded-t-sm" style={{ height: `${h}%` }} />
-                                    ))}
-                                </div>
-                            </MockCard>
-
-                            <MockCard title="Asset Allocation">
-                                <div className="flex items-center justify-between">
-                                    <MetricValue
-                                        value="Diversified"
-                                        sub="7 Asset Classes"
-                                    />
-                                    <DonutChart />
-                                </div>
-                            </MockCard>
-
-                            <MockCard title="Pending Tasks">
-                                <MetricValue
-                                    value="12"
-                                    change="3 overdue"
-                                    trend="down"
-                                />
-                                <div className="mt-4 space-y-3">
-                                    {[
-                                        { name: 'K-1 Processing', status: 'Processing' },
-                                        { name: 'Q4 Statements', status: 'Complete' },
-                                        { name: 'Capital Call #7', status: 'Pending' },
-                                    ].map((task) => (
-                                        <div key={task.name} className="flex items-center justify-between text-[11px]">
-                                            <span className="text-gray-300 font-medium">{task.name}</span>
-                                            <StatusTag status={task.status} />
-                                        </div>
-                                    ))}
-                                </div>
-                            </MockCard>
+                        {/* Dashboard Image */}
+                        <div className="bg-dark-primary">
+                            <img
+                                src="/src/assets/Dashboard.png"
+                                alt="Finage Dashboard"
+                                className="w-full h-auto block"
+                            />
                         </div>
                     </div>
                 </SectionReveal>

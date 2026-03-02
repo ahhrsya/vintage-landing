@@ -9,8 +9,8 @@ export const HeroSectionV2 = () => {
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/20 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/4" />
             <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-violet-600/10 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/4" />
 
-            <div className="max-w-[1400px] mx-auto px-6 w-full relative z-10">
-                <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <div className="max-w-[1200px] mx-auto px-6 w-full relative z-10">
+                <div className="grid lg:grid-cols-2 gap-16 items-center">
 
                     {/* Left Side: Content */}
                     <div className="text-left">
@@ -21,9 +21,17 @@ export const HeroSectionV2 = () => {
                         </SectionReveal>
 
                         <SectionReveal delay={0.2}>
-                            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-8 leading-[1.05]">
+                            <h1
+                                style={{
+                                    fontFamily: "'Manrope', sans-serif",
+                                    fontWeight: 500,
+                                    letterSpacing: '-3px',
+                                    fontSize: '72px'
+                                }}
+                                className="text-white mb-8 leading-[1.05] drop-shadow-2xl"
+                            >
                                 Ultimate Guide to the <br />
-                                <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent italic">Right Asset</span>
+                                Right Asset
                             </h1>
                         </SectionReveal>
 
@@ -60,7 +68,7 @@ export const HeroSectionV2 = () => {
                     </div>
 
                     {/* Right Side: Visual Components */}
-                    <div className="relative h-[600px] flex items-center justify-center">
+                    <div className="relative h-[600px] flex items-center justify-center scale-90 lg:scale-95">
                         {/* Center Large Card (Visistors) */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.8 }}

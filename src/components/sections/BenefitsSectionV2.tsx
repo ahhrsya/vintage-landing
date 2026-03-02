@@ -41,13 +41,16 @@ export const BenefitsSectionV2 = () => {
 
                 {/* Header */}
                 <SectionReveal className="mb-20">
-                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-6 block">Benefits</span>
+                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-600 mb-6 block">Foundation</span>
                     <h2
-                        className="text-4xl md:text-6xl font-medium tracking-tight text-gray-900 mb-8 max-w-2xl leading-[1.1]"
+                        className="text-4xl md:text-6xl font-medium tracking-tight text-gray-900 mb-6 max-w-2xl leading-[1.1]"
                         style={{ fontFamily: "'Manrope', serif" }}
                     >
-                        Let your team focus on what matters most
+                        Automation, Built on Trustworthy Data
                     </h2>
+                    <p className="text-lg text-gray-500 font-medium max-w-xl">
+                        Every automated workflow is powered by verified, reconciled data. No black boxes.
+                    </p>
                 </SectionReveal>
 
                 {/* Grid */}

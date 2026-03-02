@@ -64,7 +64,7 @@ export const HeroSectionV2 = () => {
                                 }}
                                 className="text-white mb-8 leading-[1.05] drop-shadow-2xl max-w-lg"
                             >
-                                The Agentic OS for <br />
+                                The Agentic Operating System for <br />
                                 Family Offices
                             </h1>
                         </SectionReveal>

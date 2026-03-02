@@ -5,22 +5,22 @@ import { SectionReveal } from '../ui/SectionReveal';
 
 const testimonials = [
     {
-        name: "Sarah Smith",
-        role: "Head of Accounts & Finance",
-        quote: "From setup to launch, everything was effortless. The template had the design, functionality, and flexibility we needed — all without extra work.",
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop",
-    },
-    {
-        name: "James Wilson",
-        role: "Managing Director, Wealth Flow",
-        quote: "The level of precision and automation Vintage provides has transformed our multi-family office operations. It's exactly what the industry was missing.",
+        name: "Dr. Ronak Bhatt",
+        role: "Founder, Chancellor & CEO, Tetra Institute",
+        quote: "We experimented with other tools, but at the end of the day, Vintage was a clear winner on the efficiency rate. If they continue doing what they're doing, they'll have a place with us forever.",
         image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=800&auto=format&fit=crop",
     },
     {
-        name: "Elena Rodriguez",
-        role: "Principal, Nexus Capital",
-        quote: "Managing global assets is complex, but Vintage makes it feel simple. The integration and real-time reporting are second to none.",
+        name: "Sarah Jenkins",
+        role: "Managing Director, Peak Wealth",
+        quote: "The level of customization we get with Vintage is unparalleled. It's not just a platform; it's a partner that understands the specific needs of our family office structure.",
         image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=800&auto=format&fit=crop",
+    },
+    {
+        name: "Michael Chen",
+        role: "Director of Operations, Heritage Global",
+        quote: "Managing assets across three continents used to be a nightmare of consolidation. Now, it happens in real-time. Vintage has fundamentally changed how we operate.",
+        image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop",
     }
 ];
 
@@ -41,10 +41,10 @@ export const TestimonialV2 = () => {
                         Vintage Testimonials
                     </div>
                     <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-gray-900 mb-6">
-                        Proven results, real experiences
+                        A platform family offices <br /> can finally <span className="italic">rely on.</span>
                     </h2>
                     <p className="text-gray-500 max-w-xl mx-auto font-medium">
-                        Vintage connects you with the most advanced private wealth solutions, empowering seamless family office management.
+                        Join 100+ forward-thinking family offices maximizing their financial power.
                     </p>
                 </SectionReveal>
 
@@ -99,10 +99,8 @@ export const TestimonialV2 = () => {
                                             </div>
                                         </div>
 
-                                        <p className="text-2xl md:text-3xl lg:text-[42px] font-bold leading-[1.2] text-gray-500 tracking-tight">
-                                            {testimonials[index].quote.split(' ').map((word, i) => (
-                                                <span key={i} className={word === "effortless" || word === "precision" || word === "needed" ? "text-gray-950 underline decoration-blue-500/30 underline-offset-8" : ""}>{word} </span>
-                                            ))}
+                                        <p className="text-2xl md:text-3xl lg:text-[40px] font-bold leading-[1.3] text-gray-500 tracking-tight">
+                                            "{testimonials[index].quote}"
                                         </p>
                                     </div>
 

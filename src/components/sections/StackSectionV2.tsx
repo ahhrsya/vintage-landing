@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SectionReveal } from '../ui/SectionReveal';
-import { FileText, Database, Users, Cpu, CheckCircle2, ArrowDown } from 'lucide-react';
+import { FileText, Database, Users, Cpu, CheckCircle2, ArrowDown, Shield } from 'lucide-react';
 
 type TabId = 'record' | 'engagement' | 'agents';
 
@@ -44,8 +44,8 @@ export const StackSectionV2 = () => {
             items: [
                 'Unified portal for stakeholders',
                 'Real-time document sharing',
-                'Secure communication threads',
-                'Interactive performance dashboards'
+                'Cross-entity reporting and consolidation',
+                'Secure, watermark-ready sharing'
             ],
             subtext: 'Where data turns into decisions and communication.',
             visual: <EngagementVisual />
@@ -58,9 +58,9 @@ export const StackSectionV2 = () => {
             description: 'Autonomous AI agents that execute complex multi-step workflows across your entire financial operation.',
             items: [
                 'Self-reconciling ledgers',
-                'Autonomous tax preparation',
-                'Automated regulatory filing',
-                'Predictive liquidity management'
+                'Autonomous tax preparation (FATCA, CRS)',
+                'Automated capital call processing',
+                'Audit-ready reporting with full provenance'
             ],
             subtext: 'The engine that drives true operational scale.',
             visual: <AgentsVisual />
@@ -104,8 +104,8 @@ export const StackSectionV2 = () => {
                                 key={tabId}
                                 onClick={() => setActiveTab(tabId)}
                                 className={`px-4 md:px-8 py-3 rounded-xl text-sm font-bold transition-all ${activeTab === tabId
-                                        ? 'bg-[#007AFF] text-white shadow-lg shadow-blue-500/20'
-                                        : 'text-gray-400 hover:text-gray-600'
+                                    ? 'bg-[#007AFF] text-white shadow-lg shadow-blue-500/20'
+                                    : 'text-gray-400 hover:text-gray-600'
                                     }`}
                             >
                                 {contents[tabId].label}
@@ -130,7 +130,7 @@ export const StackSectionV2 = () => {
                                 <div className="w-12 h-12 bg-[#007AFF] rounded-xl flex items-center justify-center mb-8 shadow-lg shadow-blue-500/20">
                                     {contents[activeTab].icon}
                                 </div>
-                                <h3 className="text-3xl md:text-5xl font-bold text-[#1D2939] mb-10 tracking-tight">
+                                <h3 className="text-3xl md:text-5xl font-bold text-[#1D2939] mb-10 tracking-tight leading-[1.1]">
                                     {contents[activeTab].title}
                                 </h3>
                                 <p className="text-gray-500 text-lg leading-relaxed font-medium mb-10">
@@ -138,12 +138,12 @@ export const StackSectionV2 = () => {
                                 </p>
 
                                 <div className="mb-10">
-                                    <p className="font-bold text-gray-900 mb-4">Every data point is:</p>
+                                    <p className="font-bold text-gray-900 mb-4">Key Capabilities:</p>
                                     <ul className="space-y-3">
                                         {contents[activeTab].items.map((item, idx) => (
-                                            <li key={idx} className="flex items-center gap-3 text-gray-600 font-medium">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-gray-300" />
-                                                {item}
+                                            <li key={idx} className="flex items-start gap-3 text-gray-600 font-medium">
+                                                <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0" />
+                                                <span>{item}</span>
                                             </li>
                                         ))}
                                     </ul>
@@ -194,15 +194,16 @@ const RecordVisual = () => {
             </div>
 
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-50">
-                <div className="px-6 py-4 border-b border-gray-50">
+                <div className="px-6 py-4 border-b border-gray-50 flex justify-between items-center">
                     <h4 className="font-bold text-sm text-gray-900">Unified Ledger</h4>
+                    <span className="text-[9px] font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded">Synced</span>
                 </div>
                 <div className="p-0">
                     <table className="w-full text-left text-xs">
                         <thead>
                             <tr className="bg-blue-50/30">
                                 <th className="px-6 py-3 font-bold text-gray-500 uppercase tracking-wider">Entity</th>
-                                <th className="px-6 py-3 font-bold text-gray-500 uppercase tracking-wider text-right">Connected</th>
+                                <th className="px-6 py-3 font-bold text-gray-500 uppercase tracking-wider text-right">Confidence</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-gray-50">
@@ -210,7 +211,7 @@ const RecordVisual = () => {
                                 { name: 'Policy Tag', val: '99%' },
                                 { name: 'Valuation Tag', val: '96%' },
                                 { name: 'Regulatory Tag', val: '92%' },
-                                { name: 'Confidence', val: '99%' },
+                                { name: 'Audit Trail', val: '99%' },
                             ].map((row, i) => (
                                 <tr key={i} className="hover:bg-gray-50/50">
                                     <td className="px-6 py-4 text-gray-600 font-medium">{row.name}</td>
@@ -232,18 +233,49 @@ const RecordVisual = () => {
 };
 
 const EngagementVisual = () => {
-    // Placeholder visual for Tab 2
     return (
-        <div className="bg-[#FAFAFA] rounded-3xl p-8 md:p-12 border border-gray-100 shadow-inner flex items-center justify-center">
-            <div className="w-full max-w-sm bg-white rounded-2xl shadow-xl border border-gray-50 p-6 flex flex-col gap-6">
+        <div className="bg-[#FAFAFA] rounded-3xl p-8 md:p-12 border border-blue-100/20 shadow-inner">
+            <div className="w-full bg-white rounded-2xl shadow-2xl border border-gray-100 p-8 flex flex-col gap-8">
                 <div className="flex items-center justify-between">
-                    <div className="font-bold text-gray-900">Stakeholder Portal</div>
-                    <div className="px-3 py-1 bg-green-50 text-green-600 rounded-full text-[10px] font-bold">Active</div>
+                    <div>
+                        <div className="font-bold text-gray-900 text-lg mb-1">Stakeholder Portal</div>
+                        <div className="text-xs text-gray-400 font-medium italic">Custom Watermarked Access</div>
+                    </div>
+                    <div className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-[10px] font-bold">Encrypted</div>
                 </div>
-                <div className="space-y-4">
-                    <div className="h-4 bg-gray-50 rounded w-3/4" />
-                    <div className="h-4 bg-gray-50 rounded w-1/2" />
-                    <div className="h-20 bg-blue-50/30 rounded w-full border border-blue-100/50" />
+
+                <div className="grid grid-cols-2 gap-4">
+                    <div className="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                        <div className="flex items-center gap-3 mb-3">
+                            <div className="w-8 h-8 rounded-lg bg-white shadow-sm flex items-center justify-center">
+                                <Shield size={14} className="text-blue-500" />
+                            </div>
+                            <div className="text-[10px] font-bold text-gray-900 uppercase tracking-wider">Security</div>
+                        </div>
+                        <div className="h-1.5 bg-gray-200 rounded-full w-full mb-1" />
+                        <div className="h-1.5 bg-gray-200 rounded-full w-2/3" />
+                    </div>
+                    <div className="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                        <div className="flex items-center gap-3 mb-3">
+                            <div className="w-8 h-8 rounded-lg bg-white shadow-sm flex items-center justify-center">
+                                <LayoutActive size={14} className="text-green-500" />
+                            </div>
+                            <div className="text-[10px] font-bold text-gray-900 uppercase tracking-wider">Reports</div>
+                        </div>
+                        <div className="h-1.5 bg-gray-200 rounded-full w-full mb-1" />
+                        <div className="h-1.5 bg-gray-200 rounded-full w-1/2" />
+                    </div>
+                </div>
+
+                <div className="p-6 bg-blue-50 rounded-xl border border-blue-100">
+                    <div className="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-2">Live Activity</div>
+                    <div className="space-y-2">
+                        <div className="flex justify-between items-center text-[11px] font-medium text-blue-900">
+                            <span>Q3 Performance Report</span>
+                            <span className="opacity-60">Verified</span>
+                        </div>
+                        <div className="h-1 bg-blue-200 rounded-full" />
+                    </div>
                 </div>
             </div>
         </div>
@@ -251,19 +283,46 @@ const EngagementVisual = () => {
 };
 
 const AgentsVisual = () => {
-    // Placeholder visual for Tab 3
     return (
-        <div className="bg-[#F8F9FB] rounded-3xl p-8 md:p-12 border border-gray-100 shadow-inner flex items-center justify-center">
-            <div className="w-full max-w-sm grid grid-cols-2 gap-4">
-                {[1, 2, 3, 4].map(i => (
-                    <div key={i} className="aspect-square bg-white rounded-2xl shadow-md border border-gray-50 p-4 flex flex-col items-center justify-center gap-2">
-                        <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center">
-                            <Cpu size={16} className="text-blue-600" />
+        <div className="bg-[#F8F9FB] rounded-3xl p-8 md:p-12 border border-gray-100 shadow-inner">
+            <div className="grid grid-cols-2 gap-6">
+                {[
+                    { name: 'Reconciliation', status: 'Running', val: 98 },
+                    { name: 'Policy Apply', status: 'Active', val: 100 },
+                    { name: 'Tax Compute', status: 'Scheduled', val: 45 },
+                    { name: 'Report Gen', status: 'Queue', val: 0 },
+                ].map((agent, i) => (
+                    <div key={i} className="bg-white rounded-2xl shadow-xl border border-gray-50 p-6 flex flex-col gap-4">
+                        <div className="flex items-center justify-between">
+                            <div className="w-10 h-10 rounded-xl bg-[#007AFF]/5 flex items-center justify-center">
+                                <Cpu size={20} className="text-[#007AFF]" />
+                            </div>
+                            <div className={`px-2 py-0.5 rounded-full text-[8px] font-bold uppercase ${agent.status === 'Running' ? 'bg-green-50 text-green-600' : 'bg-gray-50 text-gray-400'}`}>
+                                {agent.status}
+                            </div>
                         </div>
-                        <div className="text-[10px] font-bold text-gray-400">Agent {i}</div>
+                        <div>
+                            <div className="text-xs font-bold text-gray-900 mb-1">{agent.name}</div>
+                            <div className="h-1 bg-gray-100 rounded-full overflow-hidden">
+                                <motion.div
+                                    initial={{ width: 0 }}
+                                    animate={{ width: `${agent.val}%` }}
+                                    className="h-full bg-blue-500"
+                                />
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>
         </div>
     );
 };
+
+// Mock LayoutActive for Engagement visual
+const LayoutActive = ({ size, className }: { size: number, className: string }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+        <rect width="18" height="18" x="3" y="3" rx="2" />
+        <path d="M3 9h18" />
+        <path d="M9 21V9" />
+    </svg>
+);

@@ -6,7 +6,16 @@ import { UnicornScene } from 'unicornstudio-react';
 
 export const HeroSection = () => {
     return (
-        <section className="relative pt-32 pb-20 bg-dark-primary overflow-hidden">
+        <section className="relative pt-32 pb-20 bg-dark-primary overflow-hidden min-h-[120vh]">
+            {/* Background Unicorn Studio Effect - Positioned at the very top of the section */}
+            <div className="absolute -top-[10%] left-1/2 -translate-x-1/2 w-[140%] h-[1200px] z-0 pointer-events-none opacity-100">
+                <div className="w-full h-full relative">
+                    <UnicornScene projectId="6ocpWTjaHpQEGn7yK5Gz" className="w-full h-full" />
+                    {/* Subtle glow at the top horizon */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-blue-500/10 blur-[180px] rounded-full" />
+                </div>
+            </div>
+
             <div className="relative z-10 max-w-[1200px] mx-auto px-6 text-center pointer-events-none">
                 <SectionReveal delay={0.1}>
                     <Badge dot className="mb-8 pointer-events-auto">
@@ -38,23 +47,14 @@ export const HeroSection = () => {
                     </p>
                 </SectionReveal>
 
-                <SectionReveal delay={0.4} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-24 pointer-events-auto">
+                <SectionReveal delay={0.4} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-32 pointer-events-auto">
                     <Button variant="primary" size="lg" className="h-14 px-10 text-base">Request a Demo</Button>
                     <Button variant="outline" size="lg" className="h-14 px-10 text-base">Watch Overview →</Button>
                 </SectionReveal>
 
                 {/* Dashboard Mockup without Frame */}
-                <SectionReveal delay={0.5} className="relative max-w-5xl mx-auto pointer-events-auto mt-20">
-                    {/* Background Unicorn Studio Effect - Positioned clearly above the mockup */}
-                    <div className="absolute -top-[180px] left-1/2 -translate-x-1/2 w-full h-[600px] z-[-1] pointer-events-none">
-                        <div className="w-full h-full relative">
-                            <UnicornScene projectId="6ocpWTjaHpQEGn7yK5Gz" className="w-full h-full" />
-                            {/* Decorative glow to ensure visibility */}
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-blue-500/20 blur-[120px] rounded-full" />
-                        </div>
-                    </div>
-
-                    <div className="relative z-10 rounded-2xl shadow-2xl overflow-hidden border border-white/5 bg-dark-primary">
+                <SectionReveal delay={0.5} className="relative max-w-5xl mx-auto pointer-events-auto px-4">
+                    <div className="relative z-10 rounded-2xl shadow-[0_0_100px_rgba(37,99,235,0.1)] overflow-hidden border border-white/5 bg-dark-primary">
                         {/* Dashboard Image */}
                         <img
                             src={dashboardImg}

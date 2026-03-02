@@ -4,7 +4,7 @@ import { FeatureGridV2 } from '../components/sections/FeatureGridV2';
 import { OperatingSystemSection } from '../components/sections/OperatingSystemSection';
 import { BenefitsSectionV2 } from '../components/sections/BenefitsSectionV2';
 import { TestimonialV2 } from '../components/sections/TestimonialV2';
-import { CTASection } from '../components/sections/CTASection';
+import { CTAV2 } from '../components/sections/CTAV2';
 
 export const HomeV2 = () => {
     return (
@@ -15,7 +15,7 @@ export const HomeV2 = () => {
             <OperatingSystemSection />
             <BenefitsSectionV2 />
             <TestimonialV2 />
-            <CTASection />
+            <CTAV2 />
         </>
     );
 };

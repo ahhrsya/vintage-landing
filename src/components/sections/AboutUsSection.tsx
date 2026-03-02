@@ -34,7 +34,7 @@ export const AboutUsSection = () => {
             <div className="max-w-[1200px] mx-auto px-6 w-full">
 
                 {/* Dynamic Highlight Text */}
-                <div className="max-w-4xl mx-auto mb-32 text-center md:text-left">
+                <div className="max-w-[1200px] mx-auto mb-32 text-center md:text-left">
                     <h2 className="text-3xl md:text-4xl lg:text-[42px] font-medium leading-[1.2] tracking-[-0.03em] text-gray-300">
                         {words.map((word, i) => {
                             const start = (i / words.length);
@@ -50,11 +50,11 @@ export const AboutUsSection = () => {
                 </div>
 
                 {/* 3-Column Stats Layout */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-[1000px] mx-auto items-stretch">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-[1200px] mx-auto items-stretch">
 
                     {/* Left Column (Title & Image) */}
-                    <div className="lg:col-span-3 flex flex-col justify-between">
-                        <div className="text-[11px] font-bold text-dark-primary mb-8 lg:mb-0 hidden md:block">
+                    <div className="lg:col-span-4 flex flex-col justify-between">
+                        <div className="text-[11px] font-bold text-dark-primary mb-8 lg:mb-0 hidden md:block uppercase tracking-wider">
                             In numbers
                         </div>
                         {/* Empty space filler for layout */}
@@ -63,13 +63,13 @@ export const AboutUsSection = () => {
                             <img
                                 src={imagePlaceholder}
                                 alt="In numbers visual"
-                                className="w-full aspect-[4/3] object-cover rounded-xl"
+                                className="w-full aspect-[16/9] object-cover rounded-2xl shadow-sm"
                             />
                         </div>
                     </div>
 
                     {/* Right Area: Numbers & Descriptions */}
-                    <div className="lg:col-span-9 flex flex-col gap-12 md:gap-16 lg:pl-10">
+                    <div className="lg:col-span-8 flex flex-col gap-12 md:gap-16 lg:pl-16">
                         {stats.map((stat, i) => (
                             <motion.div
                                 key={i}
@@ -77,13 +77,13 @@ export const AboutUsSection = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-50px" }}
                                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                                className="grid grid-cols-1 md:grid-cols-2 items-center gap-6 md:gap-10"
+                                className="grid grid-cols-1 md:grid-cols-2 items-center gap-6 md:gap-12"
                             >
-                                <div className="text-8xl md:text-[130px] font-medium tracking-tighter text-[#262626] leading-[0.85] text-center">
+                                <div className="text-8xl md:text-[130px] font-medium tracking-tighter text-[#262626] leading-[0.85] text-center md:text-left">
                                     {stat.num}
                                 </div>
                                 <div className="flex items-center justify-center md:justify-start">
-                                    <p className="text-[10px] md:text-[11px] text-gray-600 leading-relaxed font-medium max-w-[260px] text-center md:text-left">
+                                    <p className="text-[10px] md:text-[12px] text-gray-600 leading-relaxed font-medium max-w-[280px] text-center md:text-left">
                                         {stat.desc}
                                     </p>
                                 </div>

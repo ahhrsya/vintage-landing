@@ -10,7 +10,7 @@ export const AboutSectionV2 = () => {
         offset: ["start end", "end start"]
     });
 
-    const text = "Vintage thrives on precision, privacy, and a relentless pursuit of operational excellence. Our approach is grounded in agentic thinking and fueled by cutting-edge AI technology. We don't believe in manual overhead; instead, we dive deep into automating your unique workflows and craft the bespoke operating system that your family office deserves.";
+    const text = "Vintage thrives on precision, privacy, and operational excellence. Grounded in agentic thinking, we automate complex workflows to craft the bespoke operating system your family office deserves.";
     const words = text.split(" ");
 
     return (

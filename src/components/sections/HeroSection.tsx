@@ -45,12 +45,10 @@ export const HeroSection = () => {
 
                 {/* Dashboard Mockup without Frame */}
                 <SectionReveal delay={0.5} className="relative max-w-5xl mx-auto pointer-events-auto">
-                    {/* Background Unicorn Studio Effect - Finely tuned to look like the reference image */}
-                    <div className="absolute -top-[550px] left-1/2 -translate-x-1/2 w-[140%] h-[800px] z-[-10] pointer-events-none overflow-hidden">
+                    {/* Background Unicorn Studio Effect - Full intensity, positioned precisely behind dashboard top */}
+                    <div className="absolute -top-[400px] left-1/2 -translate-x-1/2 w-[140%] h-[800px] z-[-1] pointer-events-none overflow-hidden">
                         <div className="w-full h-full relative">
                             <UnicornScene projectId="6ocpWTjaHpQEGn7yK5Gz" className="w-full h-full" />
-                            {/* Gradient mask to focus the effect precisely at the top edge */}
-                            <div className="absolute inset-0 bg-gradient-to-b from-dark-primary via-transparent to-dark-primary opacity-60" />
                         </div>
                     </div>
 

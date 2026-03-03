@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import dashboardUpdate from '../../assets/dashboard_upadtee.png';
 
 export const HeroV3 = () => {
     return (
@@ -67,71 +68,23 @@ export const HeroV3 = () => {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="relative max-w-5xl mx-auto"
                 >
-                    {/* Mockup Card */}
+                    {/* Mockup with Image Integration */}
                     <div className="bg-[#111113] border border-white/10 rounded-2xl shadow-3xl overflow-hidden p-1">
-                        {/* Traffic light header */}
+                        {/* Browser Header Bar */}
                         <div className="flex items-center gap-1.5 px-4 py-3 bg-[#1A1A1C] border-b border-white/5">
                             <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F57] opacity-60" />
                             <div className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E] opacity-60" />
                             <div className="w-2.5 h-2.5 rounded-full bg-[#28C840] opacity-60" />
+                            <div className="ml-4 text-[10px] text-white/20 font-bold uppercase tracking-widest">finage.app — dashboard</div>
                         </div>
 
-                        {/* Content inside mockup */}
-                        <div className="p-8 grid grid-cols-1 md:grid-cols-3 gap-6 bg-[#09090B]">
-                            {/* Card 1: Total AUM */}
-                            <div className="bg-[#111113] border border-white/5 rounded-xl p-6 text-left hover:border-blue-500/30 transition-all group">
-                                <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest block mb-1">Total AUM</span>
-                                <div className="text-3xl font-bold mb-1">$4.7B</div>
-                                <div className="text-xs text-green-500 font-bold mb-4 flex items-center gap-1">
-                                    <span className="text-sm">↑</span> 12.3% YTD
-                                </div>
-                                {/* Mini Bar Chart */}
-                                <div className="flex items-end gap-1 h-12">
-                                    {[30, 45, 25, 60, 40, 75, 50].map((h, i) => (
-                                        <div key={i} className="flex-1 bg-blue-500/20 rounded-sm group-hover:bg-blue-500/40 transition-colors" style={{ height: `${h}%` }} />
-                                    ))}
-                                </div>
-                            </div>
-
-                            {/* Card 2: Asset Allocation */}
-                            <div className="bg-[#111113] border border-white/5 rounded-xl p-6 text-left hover:border-blue-500/30 transition-all group relative overflow-hidden">
-                                <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest block mb-1">Asset Allocation</span>
-                                <div className="flex justify-between items-start">
-                                    <div>
-                                        <div className="text-3xl font-bold mb-1 leading-none tracking-tight">Diversified</div>
-                                        <div className="text-xs text-white/40 font-bold">7 Asset Classes</div>
-                                    </div>
-                                </div>
-                                {/* Donut Chart Visual */}
-                                <div className="mt-6 flex justify-center">
-                                    <div className="w-24 h-24 rounded-full border-8 border-blue-500/20 relative flex items-center justify-center p-2">
-                                        <div className="w-full h-full rounded-full" style={{ background: 'conic-gradient(#3B82F6 0% 65%, #1D4ED8 65% 85%, #1E3A8A 85% 100%)' }} />
-                                        <div className="absolute inset-2 bg-[#111113] rounded-full" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Card 3: Pending Tasks */}
-                            <div className="bg-[#111113] border border-white/5 rounded-xl p-6 text-left hover:border-blue-500/30 transition-all group">
-                                <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest block mb-1">Pending Tasks</span>
-                                <div className="flex items-baseline gap-2 mb-4">
-                                    <span className="text-3xl font-bold">12</span>
-                                    <span className="text-xs text-red-500 font-bold">3 overdue</span>
-                                </div>
-                                {/* Mini Table */}
-                                <div className="space-y-3">
-                                    {[
-                                        { label: "K-1 Processing", status: "Processing", color: "text-blue-500" },
-                                        { label: "Q4 Statements", status: "Complete", color: "text-green-500" },
-                                        { label: "Capital Call #7", status: "Pending", color: "text-yellow-500" }
-                                    ].map((row, i) => (
-                                        <div key={i} className="flex items-center justify-between text-[10px] pb-2 border-b border-white/5 last:border-0 last:pb-0">
-                                            <span className="text-white/60 font-medium">{row.label}</span>
-                                            <span className={`font-bold uppercase tracking-widest ${row.color}`}>{row.status}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
+                        {/* Dashboard Image */}
+                        <div className="bg-[#09090B] overflow-hidden">
+                            <img
+                                src={dashboardUpdate}
+                                alt="Finage Dashboard Overview"
+                                className="w-full h-auto block opacity-90 transition-opacity hover:opacity-100"
+                            />
                         </div>
                     </div>
                 </motion.div>

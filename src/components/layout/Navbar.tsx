@@ -76,6 +76,12 @@ export const Navbar = () => {
                                     >
                                         Home V2
                                     </Link>
+                                    <Link
+                                        to="/v3"
+                                        className="block px-4 py-3 text-[13px] font-bold text-gray-600 hover:bg-gray-50 hover:text-black transition-colors"
+                                    >
+                                        Home V3 (Finage)
+                                    </Link>
                                 </motion.div>
                             )}
                         </AnimatePresence>

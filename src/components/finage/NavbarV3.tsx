@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
+import logo from '../../assets/logo-hero.png';
 
 export const NavbarV3 = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -21,14 +22,12 @@ export const NavbarV3 = () => {
             <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
                 {/* Logo and Versions Switcher */}
                 <div className="flex items-center gap-8">
-                    <div className="flex items-center gap-2 group cursor-pointer">
-                        <div className="w-8 h-8 bg-blue-500 rounded-sm flex items-center justify-center font-bold text-white">
-                            F
-                        </div>
+                    <Link to="/" className="flex items-center gap-2 group cursor-pointer">
+                        <img src={logo} alt="Vintage" className="h-8 w-auto object-contain" />
                         <span className="text-xl font-bold tracking-tight text-white group-hover:text-blue-500 transition-colors">
                             Finage
                         </span>
-                    </div>
+                    </Link>
 
                     <div className="relative">
                         <button

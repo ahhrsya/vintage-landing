@@ -58,7 +58,7 @@ export const CoreFeaturesV3 = () => {
                             THE CORE
                         </span>
                         <h2
-                            className="text-5xl md:text-6xl font-['Instrument_Serif'] font-medium text-[#111111] mb-10 tracking-tight leading-[1.05]"
+                            className="text-4xl md:text-5xl font-['Instrument_Serif'] font-medium text-[#111111] mb-10 tracking-tight leading-[1.05]"
                         >
                             The Agentic Operating System <br /> for Family Offices
                         </h2>

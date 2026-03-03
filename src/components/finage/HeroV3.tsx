@@ -52,26 +52,20 @@ export const HeroV3 = () => {
                     </motion.button>
                 </div>
 
-                {/* Browser Mockup Container */}
-                <div className="relative max-w-5xl mx-auto">
-                    <div className="bg-[#111113] border border-white/10 rounded-2xl shadow-3xl overflow-hidden p-1">
-                        {/* Traffic light header */}
-                        <div className="flex items-center gap-1.5 px-4 py-3 bg-[#1A1A1C] border-b border-white/5">
-                            <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F57] opacity-60" />
-                            <div className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E] opacity-60" />
-                            <div className="w-2.5 h-2.5 rounded-full bg-[#28C840] opacity-60" />
-                            <div className="ml-4 text-[10px] text-white/20 font-bold uppercase tracking-widest">finage.app — dashboard</div>
-                        </div>
-
-                        {/* Dashboard Image */}
-                        <div className="bg-[#09090B] overflow-hidden">
-                            <img
-                                src={dashboardUpdate}
-                                alt="Finage Dashboard Overview"
-                                className="w-full h-auto block opacity-90 transition-opacity hover:opacity-100"
-                            />
-                        </div>
-                    </div>
+                {/* Dashboard Image Only */}
+                <div className="relative max-w-5xl mx-auto px-4 md:px-0">
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                    >
+                        <img
+                            src={dashboardUpdate}
+                            alt="Finage Dashboard Overview"
+                            className="w-full h-auto block rounded-2xl shadow-2xl"
+                        />
+                    </motion.div>
                 </div>
             </motion.div>
         </section>

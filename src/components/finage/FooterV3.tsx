@@ -1,4 +1,5 @@
 import { Twitter, Linkedin, Instagram, Facebook } from 'lucide-react';
+import logo from '../../assets/logo white.svg';
 
 export const FooterV3 = () => {
     return (
@@ -11,12 +12,7 @@ export const FooterV3 = () => {
                     {/* Branding Column */}
                     <div className="col-span-2 lg:col-span-2 space-y-8">
                         <div className="flex items-center gap-2 group cursor-pointer">
-                            <div className="w-8 h-8 bg-blue-500 rounded-sm flex items-center justify-center font-bold text-white">
-                                F
-                            </div>
-                            <span className="text-xl font-bold tracking-tight text-white group-hover:text-blue-500 transition-colors">
-                                Finage
-                            </span>
+                            <img src={logo} alt="Vintage" className="h-8 w-auto object-contain" />
                         </div>
                         <p className="text-white/40 font-medium leading-relaxed max-w-[280px]">
                             The agentic operating system built for the complexity of private wealth management.
@@ -69,7 +65,7 @@ export const FooterV3 = () => {
                 {/* Bottom Bar */}
                 <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
                     <div className="text-xs text-white/20 font-bold uppercase tracking-widest">
-                        © 2026 Finage. All rights reserved.
+                        © 2026 Vintage. All rights reserved.
                     </div>
                     <div className="text-xs text-white/20 font-bold uppercase tracking-widest italic">
                         Built for families that think in generations.

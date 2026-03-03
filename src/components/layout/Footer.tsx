@@ -1,3 +1,5 @@
+import logo from '../../assets/logo white.svg';
+
 export const Footer = () => {
     return (
         <footer className="py-20 bg-dark-primary text-gray-400 border-t border-white/5">
@@ -5,7 +7,7 @@ export const Footer = () => {
                 <div className="grid grid-cols-2 md:grid-cols-12 gap-12 mb-20">
                     <div className="col-span-2 md:col-span-12 lg:col-span-5">
                         <div className="flex items-center gap-3 mb-6">
-                            <span className="text-xl font-bold text-white tracking-tight">Vintage OS</span>
+                            <img src={logo} alt="Vintage" className="h-8 w-auto object-contain" />
                         </div>
                         <p className="max-w-sm mb-6 leading-relaxed">
                             The agentic operating system built for the complexity of private wealth management.

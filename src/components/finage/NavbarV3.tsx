@@ -24,9 +24,6 @@ export const NavbarV3 = () => {
                 <div className="flex items-center gap-8">
                     <Link to="/" className="flex items-center gap-2 group cursor-pointer">
                         <img src={logo} alt="Vintage" className="h-8 w-auto object-contain" />
-                        <span className="text-xl font-bold tracking-tight text-white group-hover:text-blue-500 transition-colors">
-                            Finage
-                        </span>
                     </Link>
 
                     <div className="relative">
@@ -49,7 +46,7 @@ export const NavbarV3 = () => {
                                     {[
                                         { name: 'Home V1', path: '/' },
                                         { name: 'Home V2', path: '/v2' },
-                                        { name: 'Home V3 (Finage)', path: '/v3' }
+                                        { name: 'Home V3', path: '/v3' }
                                     ].map((v) => (
                                         <Link
                                             key={v.path}
